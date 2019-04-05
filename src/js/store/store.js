@@ -49,7 +49,7 @@ const getState = ({ getStore, setStore }) => {
 				let shoppingCart = store.shoppingCart;
 				let i = 0;
 				let itemTotal = 0;
-				let total = 0;
+				var total = 0;
 				//loop the products to look for index
 				let product = shoppingCart.find((cartItem, index) => {
 					if (cartItem.item === item) {
@@ -61,7 +61,7 @@ const getState = ({ getStore, setStore }) => {
 				console.log("product ", product);
 				if (typeof product !== "undefined") {
 					shoppingCart[i].count++;
-					itemTotal =
+					total =
 						shoppingCart[i].count *
 						shoppingCart[i].item.productPrice;
 
@@ -71,7 +71,7 @@ const getState = ({ getStore, setStore }) => {
 						count: 1,
 						item: item
 					});
-					itemTotal =
+					total =
 						shoppingCart[i].count *
 						shoppingCart[i].item.productPrice;
 					console.log(itemTotal);
@@ -81,12 +81,13 @@ const getState = ({ getStore, setStore }) => {
 				console.log("current cart ", shoppingCart);
 			},
 
-			totalPrice: elem => {
+			totalPrice: () => {
 				const store = getStore();
 				let total = 0;
 
-				for (var i = 0; i < elem.length; i++) {
-					total = total + elem[i].productPrice * elem[i].qty;
+				for (var obj in store.shoppingCart) {
+					let product = store.shoppingCart[obj];
+					total += product.item.productPrice * product.count;
 				}
 				return total;
 			},

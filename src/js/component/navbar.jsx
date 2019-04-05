@@ -6,11 +6,7 @@ import {
 	NavbarToggler,
 	NavbarBrand,
 	Nav,
-	NavItem,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
+	NavItem
 } from "reactstrap";
 import PropTypes from "prop-types";
 
@@ -57,21 +53,6 @@ export default class NavBar extends React.Component {
 									<i className="fas fa-shopping-cart" />
 								</Link>
 							</NavItem>
-							<UncontrolledDropdown nav inNavbar>
-								<DropdownToggle nav caret className="mx-3">
-									Options
-								</DropdownToggle>
-								<DropdownMenu right>
-									<DropdownItem href="/contact">
-										Contact Us
-									</DropdownItem>
-									<DropdownItem href="/about">
-										About Us
-									</DropdownItem>
-									<DropdownItem divider />
-									<DropdownItem>Reset</DropdownItem>
-								</DropdownMenu>
-							</UncontrolledDropdown>
 						</Nav>
 					</Collapse>
 				</Navbar>

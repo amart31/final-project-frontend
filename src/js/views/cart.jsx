@@ -36,7 +36,7 @@ export class Cart extends React.Component {
 							{({ store, actions }) => {
 								return store.shoppingCart.map((item, index) => {
 									return (
-										<div key={item.toString()}>
+										<div key={index}>
 											<div className="row">
 												<div className="col-12 col-sm-12 col-md-2 text-center">
 													<img
@@ -139,9 +139,7 @@ export class Cart extends React.Component {
 										<button
 											onClick={() => {
 												this.setState({
-													total: actions.totalPrice(
-														store.shoppingCart
-													)
+													total: actions.totalPrice()
 												});
 											}}
 											id="updateCart"
