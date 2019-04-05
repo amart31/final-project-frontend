@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
 	Collapse,
 	Navbar,
@@ -6,7 +7,6 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink,
 	UncontrolledDropdown,
 	DropdownToggle,
 	DropdownMenu,
@@ -38,24 +38,24 @@ export default class NavBar extends React.Component {
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
 							<NavItem>
-								<NavLink href="/" className="mx-3">
+								<Link to="/" className="mx-3">
 									Home
-								</NavLink>
+								</Link>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/rent" className="mx-3">
+								<Link to="/rent" className="mx-3">
 									Rent
-								</NavLink>
+								</Link>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/login" className="mx-3">
+								<Link to="/login" className="mx-3">
 									Account
-								</NavLink>
+								</Link>
 							</NavItem>
 							<NavItem>
-								<NavLink href="/cart" className="mx-3">
+								<Link to="/cart" className="mx-3">
 									<i className="fas fa-shopping-cart" />
-								</NavLink>
+								</Link>
 							</NavItem>
 							<UncontrolledDropdown nav inNavbar>
 								<DropdownToggle nav caret className="mx-3">

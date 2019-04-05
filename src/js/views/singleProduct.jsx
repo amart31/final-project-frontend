@@ -3,34 +3,38 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 
+import { Jumbotron, Button } from "reactstrap";
+
 export class Item extends React.Component {
 	render() {
 		return (
-			<div className="jumbotron">
+			<div className="container">
 				<Context.Consumer>
-					{({ store }) => {
+					{({ store, actions }) => {
 						return (
-							<h1 className="display-4">
-								This will show the demo element:{" "}
-								{
-									store.demo[this.props.match.params.theid]
-										.title
-								}
-							</h1>
+							<Jumbotron>
+								<h1 className="display-3">
+									{
+										store.products[
+											this.props.match.params.theid
+										].productName
+									}
+								</h1>
+								<p className="lead">
+									{
+										store.products[
+											this.props.match.params.theid
+										].productDescription
+									}
+								</p>
+								<hr className="my-2" />
+								<p className="lead">
+									<Button color="primary">Add to Cart</Button>
+								</p>
+							</Jumbotron>
 						);
 					}}
 				</Context.Consumer>
-
-				<hr className="my-4" />
-
-				<Link to="/">
-					<span
-						className="btn btn-primary btn-lg"
-						href="#"
-						role="button">
-						Back home
-					</span>
-				</Link>
 			</div>
 		);
 	}
@@ -38,4 +42,9 @@ export class Item extends React.Component {
 
 Item.propTypes = {
 	match: PropTypes.object
+};
+Jumbotron.propTypes = {
+	className: PropTypes.string,
+	productName: PropTypes.string,
+	productDescription: PropTypes.string
 };

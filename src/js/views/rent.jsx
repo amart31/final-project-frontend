@@ -30,9 +30,14 @@ export class Rent extends React.Component {
 											alt="Card image cap"
 										/>
 										<CardBody>
-											<CardTitle>
-												{item.productName}
-											</CardTitle>
+											<Link
+												to={
+													"/item/" + item.productName
+												}>
+												<CardTitle>
+													{item.productName}
+												</CardTitle>
+											</Link>
 											<CardSubtitle>
 												Card subtitle
 											</CardSubtitle>

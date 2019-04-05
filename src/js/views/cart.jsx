@@ -21,7 +21,6 @@ export class Cart extends React.Component {
 							<i
 								className="fa fa-shopping-cart"
 								aria-hidden="true"
-								margin-
 							/>
 						</span>
 						<a
@@ -101,7 +100,9 @@ export class Cart extends React.Component {
 																step="1"
 																max="99"
 																min="1"
-																value={item.qty}
+																value={
+																	item.count
+																}
 																title="Qty"
 																className="qty"
 																size="4"
