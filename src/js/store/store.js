@@ -94,8 +94,16 @@ const getState = ({ getStore, setStore }) => {
 			setQty: (val, i) => {
 				const store = getStore();
 
-				store.shoppingCart[i].productQuantity = val.target.value;
+				store.shoppingCart[i].count = val.target.value;
 				setStore({ shoppingCart: store.shoppingCart });
+			},
+			removeCartItem: item => {
+				const store = getStore();
+				let index;
+				if (store.shoppingCart.includes(item)) {
+					index = store.shoppingCart.indexOf(item);
+					store.shoppingCart.splice(index, 1);
+				}
 			},
 			changeColor: (index, color) => {
 				//get the store

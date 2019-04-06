@@ -85,11 +85,6 @@ export class Cart extends React.Component {
 													<div className="col-4 col-sm-4 col-md-4">
 														<div className="quantity">
 															<input
-																type="button"
-																value="+"
-																className="plus"
-															/>
-															<input
 																onChange={e =>
 																	actions.setQty(
 																		e,
@@ -107,15 +102,17 @@ export class Cart extends React.Component {
 																className="qty"
 																size="4"
 															/>
-															<input
-																type="button"
-																value="-"
-																className="minus"
-															/>
 														</div>
 													</div>
 													<div className="col-2 col-sm-2 col-md-2 text-right">
 														<button
+															onClick={() => {
+																this.setState({
+																	shoppingCart: actions.removeCartItem(
+																		item
+																	)
+																});
+															}}
 															type="button"
 															className="btn btn-outline-danger btn-xs">
 															<i
