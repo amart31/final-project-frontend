@@ -1,0 +1,11 @@
+.img-card {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered-text {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

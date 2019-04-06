@@ -1,0 +1,20 @@
+.subheadbutton {
+  color: white;
+  border-radius: 20px;
+  width: 150px;
+  height: 65px;
+  overflow: hidden;
+  position: relative;
+}
+.subhead-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.subhead-container {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
