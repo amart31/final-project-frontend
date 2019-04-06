@@ -1,9 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/appContext.jsx";
-
+import PropTypes from "prop-types";
 import "../../styles/demo.css";
+
+import {
+	Card,
+	Button,
+	CardHeader,
+	CardFooter,
+	CardBody,
+	CardTitle,
+	Container,
+	Row,
+	Col
+} from "reactstrap";
 
 export class Cart extends React.Component {
 	constructor(props) {
@@ -14,75 +25,71 @@ export class Cart extends React.Component {
 	}
 	render() {
 		return (
-			<div className="container">
-				<div className="card shopping-cart">
-					<div className="card-header bg-primary text-light float-right ">
+			<Container>
+				<Card className="shopping-cart">
+					<CardHeader className="bg-primary text-light d-flex justify-content-between">
 						<span>
 							<i
 								className="fa fa-shopping-cart"
 								aria-hidden="true"
 							/>
 						</span>
-						<a
-							id="bttnCtxt"
-							href="/rent"
-							className="btn btn-outline-info btn-sm pull-right text-white bg-success">
-							Continue shopping
-						</a>
-						<div /*className="clearfix"*/ />
-					</div>
-					<div className="cart-body">
+						<Link to="/rent/">
+							<Button>Continue Shopping</Button>
+						</Link>
+					</CardHeader>
+
+					<CardBody>
 						<Context.Consumer>
 							{({ store, actions }) => {
 								return store.shoppingCart.map((item, index) => {
 									return (
 										<div key={index}>
-											<div className="row">
-												<div className="col-12 col-sm-12 col-md-2 text-center">
+											<Row>
+												<Col
+													sm="12"
+													md="2"
+													className="text-center">
 													<img
 														className="img-responsive"
 														src={item.productImage}
-														alt="prewiew"
-														width="120"
-														height="80"
+														alt="preview"
+														width="75"
+														height="50"
 													/>
-												</div>
-												<div className="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
-													<h4 className="product-name">
-														<strong>
-															<Link to="/product">
-																{
-																	item.productName
-																}
-															</Link>
-														</strong>
-													</h4>
-													<h4>
+												</Col>
+												<Col sm="12" md="6">
+													<Link to="/product">
+														<h4 className="product-name">
+															{item.productName}
+														</h4>
+													</Link>
+													<p>
 														<small>
 															{
 																item.productDescription
 															}
 														</small>
-													</h4>
-												</div>
-												<div className="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
-													<div
-														className="col-3 col-sm-3 col-md-6 text-md-right"
+													</p>
+												</Col>
+												<Col
+													sm="12"
+													md="4"
+													className="text-sm-center  text-md-right row">
+													<Col
+														sm="3"
+														md="6"
 														style={{
 															paddingTop: "5px"
 														}}>
 														<h6>
-															<strong>
-																{
-																	item.productPrice
-																}{" "}
-																<span className="text-muted">
-																	x
-																</span>
-															</strong>
+															{item.productPrice}
+															<span className="text-muted">
+																x
+															</span>
 														</h6>
-													</div>
-													<div className="col-4 col-sm-4 col-md-4">
+													</Col>
+													<Col sm="4" md="4">
 														<div className="quantity">
 															<input
 																onChange={e =>
@@ -103,8 +110,11 @@ export class Cart extends React.Component {
 																size="4"
 															/>
 														</div>
-													</div>
-													<div className="col-2 col-sm-2 col-md-2 text-right">
+													</Col>
+													<Col
+														sm="2"
+														md="2"
+														className="text-right">
 														<button
 															onClick={() => {
 																this.setState({
@@ -120,16 +130,16 @@ export class Cart extends React.Component {
 																aria-hidden="true"
 															/>
 														</button>
-													</div>
-												</div>
-											</div>
+													</Col>
+												</Col>
+											</Row>
 											<hr />
 										</div>
 									);
 								});
 							}}
 						</Context.Consumer>
-						<div className="pull-right float-right mr-2">
+						<Row className="pull-right float-right mr-2">
 							<Context.Consumer>
 								{({ store, actions }) => {
 									return (
@@ -146,27 +156,10 @@ export class Cart extends React.Component {
 									);
 								}}
 							</Context.Consumer>
-						</div>
-					</div>
-					<div className="card-footer">
-						{/*<div className="coupon col-md-5 col-sm-5 no-padding-left pull-left">
-							<div className="row">
-								<div className="col-6">
-									<input
-										type="text"
-										className="form-control"
-										placeholder="cupon code"
-									/>
-								</div>
-								<div className="col-6">
-									<input
-										type="submit"
-										className="btn btn-default"
-										value="Use cupon"
-									/>
-								</div>
-							</div>
-						</div>*/}
+						</Row>
+					</CardBody>
+
+					<CardFooter>
 						<div className="pull-right" style={{ margin: "10px" }}>
 							<a href="" className="btn btn-success pull-right">
 								Checkout
@@ -177,9 +170,46 @@ export class Cart extends React.Component {
 								Total price: <b>{this.state.total}</b>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+					</CardFooter>
+				</Card>
+			</Container>
 		);
 	}
 }
+
+Card.propTypes = {
+	tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string]),
+
+	color: PropTypes.string,
+	body: PropTypes.bool,
+	className: PropTypes.string
+};
+CardFooter.propTypes = {
+	className: PropTypes.string
+};
+
+CardHeader.propTypes = {
+	className: PropTypes.string
+};
+Container.propTypes = {
+	fluid: PropTypes.bool
+	// applies .container-fluid class
+};
+Row.propTypes = {
+	noGutters: PropTypes.bool
+};
+
+const stringOrNumberProp = PropTypes.oneOfType([
+	PropTypes.number,
+	PropTypes.string
+]);
+const columnProps = PropTypes.oneOfType([
+	PropTypes.string,
+	PropTypes.number,
+	PropTypes.bool
+]);
+
+Col.propTypes = {
+	sm: columnProps,
+	md: columnProps
+};
