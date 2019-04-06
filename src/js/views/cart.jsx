@@ -38,7 +38,6 @@ export class Cart extends React.Component {
 							<Button>Continue Shopping</Button>
 						</Link>
 					</CardHeader>
-
 					<CardBody>
 						<Context.Consumer>
 							{({ store, actions }) => {

@@ -105,6 +105,29 @@ const getState = ({ getStore, setStore }) => {
 					store.shoppingCart.splice(index, 1);
 				}
 			},
+			validateEmail: e => {
+				const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+				const { validate } = this.state;
+				if (emailRex.test(e.target.value)) {
+					validate.emailState = "has-success";
+				} else {
+					validate.emailState = "has-danger";
+				}
+				this.setState({ validate });
+			},
+			SubmitForm: e => {
+				e.preventDefault();
+				console.log("okay");
+			},
+			handleSignupChange: async event => {
+				const { target } = event;
+				const value =
+					target.type === "checkbox" ? target.checked : target.value;
+				const { name } = target;
+				await this.setState({
+					[name]: value
+				});
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
