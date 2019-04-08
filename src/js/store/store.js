@@ -8,6 +8,8 @@ const getState = ({ getStore, setStore }) => {
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					productPrice: 44,
 					productQuantity: 1,
+					stocked: true,
+					category: "Top",
 					productDescription: "Short description of item 1"
 				},
 				{
@@ -16,6 +18,18 @@ const getState = ({ getStore, setStore }) => {
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					productPrice: 34,
 					productQuantity: 1,
+					stocked: true,
+					category: "Top",
+					productDescription: "Short description of item 2"
+				},
+				{
+					productName: "Balmain Tee",
+					productImage:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					productPrice: 34,
+					productQuantity: 1,
+					stocked: false,
+					category: "Top",
 					productDescription: "Short description of item 2"
 				},
 				{
@@ -24,6 +38,8 @@ const getState = ({ getStore, setStore }) => {
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					productPrice: 47,
 					productQuantity: 1,
+					stocked: true,
+					category: "Top",
 					productDescription: "Short description of item 3"
 				}
 			],
