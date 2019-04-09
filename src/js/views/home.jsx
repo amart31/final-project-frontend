@@ -23,7 +23,7 @@ export class Home extends React.Component {
 					<h2 className="section-heading mt-4">
 						How it works section
 					</h2>
-					<div className="how-itworks text-center">
+					<div className="how-itworks text-center mb-4">
 						<HowItWorks />
 					</div>
 				</div>
