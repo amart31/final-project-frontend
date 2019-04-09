@@ -45,10 +45,7 @@ export class Cart extends React.Component {
 									return (
 										<div key={index}>
 											<Row>
-												<Col
-													sm="12"
-													md="2"
-													className="text-center">
+												<Col className="text-center">
 													<img
 														className="img-responsive"
 														src={item.image}
@@ -57,8 +54,8 @@ export class Cart extends React.Component {
 														height="50"
 													/>
 												</Col>
-												<Col sm="12" md="6">
-													<Link to="/product">
+												<Col>
+													<Link to="/rent">
 														<h4 className="product-name">
 															{item.name}
 														</h4>
@@ -69,24 +66,19 @@ export class Cart extends React.Component {
 														</small>
 													</p>
 												</Col>
-												<Col
-													sm="12"
-													md="4"
-													className="text-sm-center  text-md-right row">
+												<Col className="text-sm-center  text-md-right row">
 													<Col
-														sm="3"
-														md="6"
 														style={{
 															paddingTop: "5px"
 														}}>
-														<h6>
+														<p>
 															{item.price}
 															<span className="text-muted">
 																x
 															</span>
-														</h6>
+														</p>
 													</Col>
-													<Col sm="4" md="4">
+													<Col>
 														<div className="quantity">
 															<input
 																onChange={e =>
@@ -108,10 +100,7 @@ export class Cart extends React.Component {
 															/>
 														</div>
 													</Col>
-													<Col
-														sm="2"
-														md="2"
-														className="text-right">
+													<Col className="text-right">
 														<button
 															onClick={() => {
 																this.setState({
@@ -208,5 +197,6 @@ const columnProps = PropTypes.oneOfType([
 
 Col.propTypes = {
 	sm: columnProps,
-	md: columnProps
+	md: columnProps,
+	lg: columnProps
 };
