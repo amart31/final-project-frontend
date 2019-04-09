@@ -10,7 +10,7 @@ const getState = ({ getStore, setStore }) => {
 					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					description: "Short description of item 1",
-					name: "Supreme Tee"
+					name: "Tee"
 				},
 				{
 					id: 2,
@@ -20,7 +20,7 @@ const getState = ({ getStore, setStore }) => {
 					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					description: "Short description of item 1",
-					name: "Supreme Tee"
+					name: "Supreme"
 				},
 				{
 					id: 3,
@@ -40,7 +40,7 @@ const getState = ({ getStore, setStore }) => {
 					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					description: "Short description of item 1",
-					name: "Supreme Tee"
+					name: "Supremeee"
 				},
 				{
 					id: 5,
@@ -50,7 +50,7 @@ const getState = ({ getStore, setStore }) => {
 					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
 					description: "Short description of item 1",
-					name: "Supreme Tee"
+					name: "YSL Tee"
 				},
 				{
 					id: 6,
