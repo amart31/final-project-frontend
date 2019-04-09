@@ -7,9 +7,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -17,9 +17,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 5000,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -27,9 +27,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Bottom",
 					price: 11000,
 					stocked: false,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -37,9 +37,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 799,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -47,9 +47,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Bottom",
 					price: 1300,
 					stocked: false,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -57,9 +57,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Bottom",
 					price: 100,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -67,9 +67,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -77,9 +77,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -87,9 +87,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -97,9 +97,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -107,9 +107,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -117,9 +117,9 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				},
 				{
@@ -127,13 +127,14 @@ const getState = ({ getStore, setStore }) => {
 					category: "Top",
 					price: 45.99,
 					stocked: true,
-					Image:
+					image:
 						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					Description: "Short description of item 1",
+					description: "Short description of item 1",
 					name: "Supreme Tee"
 				}
 			],
-			shoppingCart: []
+			shoppingCart: [],
+			rows: []
 		},
 		actions: {
 			addToCart: item => {

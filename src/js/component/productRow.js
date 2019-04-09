@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Context } from "../store/appContext.jsx";
+
 import "../../styles/ProductRow.css";
 
 export default class ProductRow extends React.Component {
@@ -18,13 +20,30 @@ export default class ProductRow extends React.Component {
 			<span style={{ color: "red" }}>{this.props.product.name}</span>
 		);
 		return (
-			<tr>
-				<td>{name}</td>
-				<td>{this.props.product.price}</td>
-				<td>
-					<button onClick={this.destroy}>x</button>
-				</td>
-			</tr>
+			<Context.Consumer>
+				{({ store, actions }) => {
+					return store.shoppingCart.map((item, index) => {
+						return (
+							<tr key={index}>
+								<td>{name}</td>
+								<td>{item.price}</td>
+								<td>
+									<button
+										onClick={() => {
+											this.setState({
+												shoppingCart: actions.addToCart(
+													item
+												)
+											});
+										}}>
+										Cart
+									</button>
+								</td>
+							</tr>
+						);
+					});
+				}}
+			</Context.Consumer>
 		);
 	}
 }

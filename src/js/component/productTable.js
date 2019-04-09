@@ -3,6 +3,8 @@ import ProductRow from "../component/productRow.js";
 import SortableColumnHeader from "../component/sortableColumnHeader.js";
 import PropTypes from "prop-types";
 
+import { Context } from "../store/appContext.jsx";
+
 export default class ProductTable extends React.Component {
 	constructor(props) {
 		super(props);
@@ -15,15 +17,13 @@ export default class ProductTable extends React.Component {
 		};
 	}
 	sortByKeyAndOrder(objA, objB) {
-		let isDesc = this.state.sort.direction === "disc" ? 1 : -1;
+		let isDesc = this.state.sort.direction === "desc" ? 1 : -1;
 		let [a, b] = [
 			objA[this.state.sort.column],
 			objB[this.state.sort.column]
 		];
 		if (this.state.sort.column === "price") {
-			[a, b] = [a, b].map(value =>
-				parseFloat(value.replace(/[^\d]/g, ""), 10)
-			);
+			[a, b] = [a, b].map();
 		}
 		if (a > b) {
 			return 1 * isDesc;
@@ -70,23 +70,29 @@ export default class ProductTable extends React.Component {
 
 		return (
 			<div>
-				<table>
-					<thead>
-						<tr>
-							<SortableColumnHeader
-								onSort={this.handleSort}
-								currentSort={this.state.sort}
-								column="name"
-							/>
-							<SortableColumnHeader
-								onSort={this.handleSort}
-								currentSort={this.state.sort}
-								column="price"
-							/>
-						</tr>
-					</thead>
-					<tbody>{rows}</tbody>
-				</table>
+				<Context.Consumer>
+					{({ store, actions }) => {
+						return (
+							<table>
+								<thead>
+									<tr>
+										<SortableColumnHeader
+											onSort={this.handleSort}
+											currentSort={this.state.sort}
+											column="name"
+										/>
+										<SortableColumnHeader
+											onSort={this.handleSort}
+											currentSort={this.state.sort}
+											column="price"
+										/>
+									</tr>
+								</thead>
+								<tbody>{rows}</tbody>
+							</table>
+						);
+					}}
+				</Context.Consumer>
 			</div>
 		);
 	}

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Context } from "../store/appContext.jsx";
 
 export default class FilterProducts extends React.Component {
 	constructor(props) {
@@ -17,24 +18,32 @@ export default class FilterProducts extends React.Component {
 	}
 	render() {
 		return (
-			<form>
-				<input
-					type="text"
-					placeholder="Search..."
-					value={this.props.filterText}
-					name="filterText"
-					onChange={this.handleChange}
-				/>
-				<p>
-					<input
-						type="checkbox"
-						checked={this.props.inStockOnly}
-						name="inStockOnly"
-						onChange={this.handleChange}
-					/>
-					Only show stocked products
-				</p>
-			</form>
+			<div>
+				<Context.Consumer>
+					{({ store, actions }) => {
+						return (
+							<form>
+								<input
+									type="text"
+									placeholder="Search..."
+									value={this.props.filterText}
+									name="filterText"
+									onChange={this.handleChange}
+								/>
+								<p>
+									<input
+										type="checkbox"
+										checked={this.props.inStockOnly}
+										name="inStockOnly"
+										onChange={this.handleChange}
+									/>
+									Only show stocked products
+								</p>
+							</form>
+						);
+					}}
+				</Context.Consumer>
+			</div>
 		);
 	}
 }
