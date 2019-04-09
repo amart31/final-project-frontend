@@ -51,7 +51,7 @@ export class Cart extends React.Component {
 													className="text-center">
 													<img
 														className="img-responsive"
-														src={item.productImage}
+														src={item.image}
 														alt="preview"
 														width="75"
 														height="50"
@@ -60,14 +60,12 @@ export class Cart extends React.Component {
 												<Col sm="12" md="6">
 													<Link to="/product">
 														<h4 className="product-name">
-															{item.productName}
+															{item.name}
 														</h4>
 													</Link>
 													<p>
 														<small>
-															{
-																item.productDescription
-															}
+															{item.description}
 														</small>
 													</p>
 												</Col>
@@ -82,7 +80,7 @@ export class Cart extends React.Component {
 															paddingTop: "5px"
 														}}>
 														<h6>
-															{item.productPrice}
+															{item.price}
 															<span className="text-muted">
 																x
 															</span>

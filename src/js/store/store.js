@@ -3,60 +3,137 @@ const getState = ({ getStore, setStore }) => {
 		store: {
 			products: [
 				{
-					productName: "Supreme Tee",
-					productImage:
-						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					productPrice: 44,
-					productQuantity: 1,
-					stocked: true,
+					id: 1,
 					category: "Top",
-					productDescription: "Short description of item 1"
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
 				},
 				{
-					productName: "YSL Tee",
-					productImage:
-						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					productPrice: 34,
-					productQuantity: 1,
-					stocked: true,
+					id: 2,
 					category: "Top",
-					productDescription: "Short description of item 2"
+					price: 5000,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
 				},
 				{
-					productName: "Balmain Tee",
-					productImage:
-						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					productPrice: 34,
-					productQuantity: 1,
+					id: 3,
+					category: "Bottom",
+					price: 11000,
 					stocked: false,
-					category: "Top",
-					productDescription: "Short description of item 2"
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
 				},
 				{
-					productName: "Balenciaga Tee",
-					productImage:
-						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
-					productPrice: 47,
-					productQuantity: 1,
-					stocked: true,
+					id: 4,
 					category: "Top",
-					productDescription: "Short description of item 3"
+					price: 799,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 5,
+					category: "Bottom",
+					price: 1300,
+					stocked: false,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 6,
+					category: "Bottom",
+					price: 100,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 7,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 8,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 9,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 10,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 11,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 12,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
+				},
+				{
+					id: 13,
+					category: "Top",
+					price: 45.99,
+					stocked: true,
+					Image:
+						"https://www.balenciaga.com/66/12/12122203pl_12_a_f.jpg",
+					Description: "Short description of item 1",
+					name: "Supreme Tee"
 				}
 			],
-
-			shoppingCart: [],
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			shoppingCart: []
 		},
 		actions: {
 			addToCart: item => {
@@ -77,9 +154,7 @@ const getState = ({ getStore, setStore }) => {
 				console.log("product ", product);
 				if (typeof product !== "undefined") {
 					shoppingCart[i].count++;
-					total =
-						shoppingCart[i].count *
-						shoppingCart[i].item.productPrice;
+					total = shoppingCart[i].count * shoppingCart[i].item.price;
 
 					console.log(itemTotal);
 				} else {
@@ -87,9 +162,7 @@ const getState = ({ getStore, setStore }) => {
 						count: 1,
 						item: item
 					});
-					total =
-						shoppingCart[i].count *
-						shoppingCart[i].item.productPrice;
+					total = shoppingCart[i].count * shoppingCart[i].item.price;
 					console.log(itemTotal);
 				}
 
@@ -103,7 +176,7 @@ const getState = ({ getStore, setStore }) => {
 
 				for (var obj in store.shoppingCart) {
 					let product = store.shoppingCart[obj];
-					total += product.item.productPrice * product.count;
+					total += product.item.price * product.count;
 				}
 				return total;
 			},
@@ -120,43 +193,6 @@ const getState = ({ getStore, setStore }) => {
 					index = store.shoppingCart.indexOf(item);
 					store.shoppingCart.splice(index, 1);
 				}
-			},
-			validateEmail: e => {
-				const emailRex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-				const { validate } = this.state;
-				if (emailRex.test(e.target.value)) {
-					validate.emailState = "has-success";
-				} else {
-					validate.emailState = "has-danger";
-				}
-				this.setState({ validate });
-			},
-			SubmitForm: e => {
-				e.preventDefault();
-				console.log("okay");
-			},
-			handleSignupChange: async event => {
-				const { target } = event;
-				const value =
-					target.type === "checkbox" ? target.checked : target.value;
-				const { name } = target;
-				await this.setState({
-					[name]: value
-				});
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
 			}
 		}
 	};

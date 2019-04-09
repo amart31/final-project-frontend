@@ -44,7 +44,7 @@ export default class SortableColumnHeader extends React.Component {
 }
 
 SortableColumnHeader.propTypes = {
-	column: PropTypes.object,
-	currentSort: PropTypes.func,
+	column: PropTypes.string,
+	currentSort: PropTypes.object,
 	onSort: PropTypes.func
 };

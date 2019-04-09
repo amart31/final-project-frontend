@@ -26,23 +26,20 @@ export class Rent extends React.Component {
 										<CardImg
 											top
 											width="100%"
-											src={item.productImage}
+											src={item.image}
 											alt="Card image cap"
 										/>
 										<CardBody>
-											<Link
-												to={
-													"/item/" + item.productName
-												}>
+											<Link to={"/item/" + item.name}>
 												<CardTitle>
-													{item.productName}
+													{item.name}
 												</CardTitle>
 											</Link>
 											<CardSubtitle>
 												Card subtitle
 											</CardSubtitle>
 											<CardText>
-												{item.productDescription}
+												{item.description}
 											</CardText>
 											<Button
 												onClick={() => {
