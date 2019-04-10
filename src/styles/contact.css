@@ -1,6 +1,5 @@
 .contactus {
-     max-width: 420px;
-     margin: 0 auto;
+     max-width: 450px;
 }
  input[type=text],input[type=email], select, textarea {
      width: 100%;

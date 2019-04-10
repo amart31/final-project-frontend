@@ -6,17 +6,10 @@ class SubHeadCard extends React.Component {
 	constructor(props) {
 		super(props);
 	}
-	_onMouseMove = () => {
-		const width = this.refs.subheadbutton.clientWidth;
-		const height = this.refs.subheadbutton.clientHeight;
-		console.log(width, height);
-	};
+
 	render() {
 		return (
-			<div
-				className="subheadbutton mr-4"
-				onMouseMove={this._onMouseMove}
-				ref="subheadbutton">
+			<div className="subheadbutton mr-4">
 				<img
 					src={this.props.imgurl}
 					alt="Card image cap"
