@@ -85,12 +85,7 @@ export class Rent extends React.Component {
 													alt="Card image cap"
 												/>
 												<CardBody>
-													<Link
-														to={
-															"/item/" +
-															item.meta_keys
-																.product_brand
-														}>
+													<Link to={"/item/" + index}>
 														<CardTitle>
 															{item.post_title}
 														</CardTitle>
@@ -143,6 +138,9 @@ export class Rent extends React.Component {
 		);
 	}
 }
+Rent.propTypes = {
+	match: PropTypes.object
+};
 
 CardImg.propTypes = {
 	src: PropTypes.string,
