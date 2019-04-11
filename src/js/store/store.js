@@ -53,7 +53,7 @@ const getState = ({ getStore, setStore }) => {
 					total +=
 						product.item.meta_keys.product_price * product.count;
 				}
-				return total;
+				return "$" + total;
 			},
 			setQty: (val, i) => {
 				const store = getStore();

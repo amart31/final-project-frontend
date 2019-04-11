@@ -95,6 +95,21 @@ export class Rent extends React.Component {
 															{item.post_title}
 														</CardTitle>
 													</Link>
+													<CardSubtitle>
+														<Row className="justify-content-between">
+															<span>
+																&#36;
+																{
+																	item
+																		.meta_keys
+																		.product_price
+																}
+															</span>
+															<span>
+																<i className="far fa-heart" />
+															</span>
+														</Row>
+													</CardSubtitle>
 													<CardText>
 														{
 															item.meta_keys

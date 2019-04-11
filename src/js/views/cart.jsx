@@ -49,19 +49,25 @@ export class Cart extends React.Component {
 												<Col className="text-center">
 													<img
 														src={item.item.image}
+														height="100"
+														width="100"
 														alt="image"
 													/>
 												</Col>
 												<Col>
 													<Link to="/rent">
 														<h4 className="product-name">
-															{item.post_title}
+															{
+																item.item
+																	.post_title
+															}
 														</h4>
 													</Link>
 													<p>
-														<small>
-															{item.post_title}
-														</small>
+														{
+															item.item.meta_keys
+																.product_brand
+														}
 													</p>
 												</Col>
 												<Col className="text-sm-center  text-md-right row">
@@ -70,7 +76,15 @@ export class Cart extends React.Component {
 															paddingTop: "5px"
 														}}>
 														<p>
-															{item.product_price}
+															<span>
+																&#36;
+																{
+																	item.item
+																		.meta_keys
+																		.product_price
+																}
+															</span>
+															&nbsp;&nbsp;
 															<span className="text-muted">
 																x
 															</span>
