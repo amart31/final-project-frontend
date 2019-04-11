@@ -44,17 +44,12 @@ export default class NavBar extends React.Component {
 								</Link>
 							</NavItem>
 							<NavItem>
-								<Link to="/products" className="mx-3">
-									Products
-								</Link>
-							</NavItem>
-							<NavItem>
 								<Link to="/rent" className="mx-3">
 									Rent
 								</Link>
 							</NavItem>
 							<NavItem>
-								<Link to="/login" className="mx-3">
+								<Link to="/account" className="mx-3">
 									Account
 								</Link>
 							</NavItem>

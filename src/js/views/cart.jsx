@@ -13,6 +13,7 @@ import {
 	CardTitle,
 	Container,
 	Row,
+	Media,
 	Col
 } from "reactstrap";
 
@@ -47,22 +48,19 @@ export class Cart extends React.Component {
 											<Row>
 												<Col className="text-center">
 													<img
-														className="img-responsive"
-														src={item.image}
-														alt="preview"
-														width="75"
-														height="50"
+														src={item.item.image}
+														alt="image"
 													/>
 												</Col>
 												<Col>
 													<Link to="/rent">
 														<h4 className="product-name">
-															{item.name}
+															{item.post_title}
 														</h4>
 													</Link>
 													<p>
 														<small>
-															{item.description}
+															{item.post_title}
 														</small>
 													</p>
 												</Col>
@@ -72,7 +70,7 @@ export class Cart extends React.Component {
 															paddingTop: "5px"
 														}}>
 														<p>
-															{item.price}
+															{item.product_price}
 															<span className="text-muted">
 																x
 															</span>
@@ -183,20 +181,4 @@ Container.propTypes = {
 };
 Row.propTypes = {
 	noGutters: PropTypes.bool
-};
-
-const stringOrNumberProp = PropTypes.oneOfType([
-	PropTypes.number,
-	PropTypes.string
-]);
-const columnProps = PropTypes.oneOfType([
-	PropTypes.string,
-	PropTypes.number,
-	PropTypes.bool
-]);
-
-Col.propTypes = {
-	sm: columnProps,
-	md: columnProps,
-	lg: columnProps
 };
