@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../../styles/home.css";
-
 export class Account extends React.Component {
 	render() {
 		return (

@@ -87,17 +87,19 @@ export class Rent extends React.Component {
 												<CardBody>
 													<Link
 														to={
-															"/item/" + item.name
+															"/item/" +
+															item.meta_keys
+																.product_brand
 														}>
 														<CardTitle>
-															{item.name}
+															{item.post_title}
 														</CardTitle>
 													</Link>
-													<CardSubtitle>
-														{item.description}
-													</CardSubtitle>
 													<CardText>
-														{item.description}
+														{
+															item.meta_keys
+																.product_brand
+														}
 													</CardText>
 													<Button
 														onClick={() => {
