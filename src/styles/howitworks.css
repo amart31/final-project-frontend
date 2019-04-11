@@ -1,37 +1,27 @@
 .stepnumber {
-    text-transform: uppercase;
-    border: 5px solid #4a82db;
-    height: 60px;
+    float: none;
+    margin: 0 auto 10px;
     width: 60px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    box-shadow:  0 0 5px 5px #496ca3;
+    height: 60px;
+    border: 1px solid #4a82db;
+    background: none;
+    color: #4a82db;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 60px;
+    border-radius: 50%;
 }
-.vl {
-    border-left: 6px solid #4a82db;
-    height: 25px;
-    position: relative;
-    left: 50%;
-    margin-left: -3px;
-    top: 0;
+.stepcard{
+    text-transform: uppercase;
 }
-.stepdetails{
-    border: 5px solid #4a82db;
-    height: 100px;
-    width: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    box-shadow:  0 0 5px 5px #496ca3;
+
+.steplist{
+    width: 100%;
 }
+
 .switcher{
     margin-left: auto;
     margin-right: auto;
-    display: block;
-    align-content: center;
     width: 335px;
 }
 

@@ -58,37 +58,111 @@ export default class HowItWorks extends React.Component {
 				</div>
 				<TabContent activeTab={this.state.activeTab}>
 					<TabPane tabId="1">
-						<div className="stepnumber">Step 1</div>
-						<div className="vl" />
-						<div className="stepdetails">List your item</div>
-						<div className="vl" />
-						<div className="stepnumber">Step 2</div>
-						<div className="vl" />
-						<div className="stepdetails">Ship item, make money</div>
-						<div className="vl" />
-						<div className="stepnumber">Step 3</div>
-						<div className="vl" />
-						<div className="stepdetails">
-							Get item back and rent again
+						<div className="container steplist">
+							<div className="row">
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">1</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 1:</strong>
+												List your clothes homes
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://images.pexels.com/photos/1266007/pexels-photo-1266007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">2</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 1:</strong>
+												Rent your clothes homes
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://as2.ftcdn.net/jpg/00/49/66/17/500_F_49661779_t6gq80LMzcxzH0KLcQF6LnnbG6uSnShW.jpg"
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">3</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 3:</strong>
+												Receive, Rock, rerent
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://t3.ftcdn.net/jpg/01/26/87/04/240_F_126870421_jHjuJfsLESyPobRNg6zhlSNHD4j7xp6W.jpg"
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</TabPane>
 					<TabPane tabId="2">
-						<div className="stepnumber">Step 1</div>
-						<div className="vl" />
-						<div className="stepdetails">
-							Order your product with ease of mind
-						</div>
-						<div className="vl" />
-						<div className="stepnumber">Step 2</div>
-						<div className="vl" />
-						<div className="stepdetails">
-							Recieve it, wear it, rock it.
-						</div>
-						<div className="vl" />
-						<div className="stepnumber">Step 3</div>
-						<div className="vl" />
-						<div className="stepdetails">
-							Return after swagfest and repeat for other items
+						<div className="container steplist">
+							<div className="row">
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">1</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 1:</strong>
+												register and order
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://as1.ftcdn.net/jpg/01/03/25/24/500_F_103252493_JUc5rXG6ThFWFZhQE4NwQPrCTkmFa0Fk.jpg"
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">2</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 2:</strong>
+												Recieve and rock
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://images.pexels.com/photos/1822845/pexels-photo-1822845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+											/>
+										</div>
+									</div>
+								</div>
+								<div className="col">
+									<div className="stepcard">
+										<div className="stepnumber">3</div>
+										<div className="stepcard-body">
+											<h5>
+												<strong>Step 3:</strong>
+												Return and repeat
+											</h5>
+											<img
+												width="300"
+												height="218"
+												src="https://as1.ftcdn.net/jpg/02/10/12/92/500_F_210129241_fc3EDLMgqyVqgeZicp0k9VQ7EarQb6X6.jpg"
+											/>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</TabPane>
 				</TabContent>
