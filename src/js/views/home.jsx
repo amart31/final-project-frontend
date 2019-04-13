@@ -20,9 +20,7 @@ export class Home extends React.Component {
 					<FeaturedList />
 				</div>
 				<div className="how-itworks">
-					<h2 className="section-heading mt-4">
-						How it works section
-					</h2>
+					<h2 className="section-heading mt-4">How it works:</h2>
 					<div className="how-itworks text-center mb-4">
 						<HowItWorks />
 					</div>

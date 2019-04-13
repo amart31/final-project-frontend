@@ -8,12 +8,12 @@ const SubHead = props => {
 			<Link to="/contact">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						imgurl="https://www.blakleysflooring.com/wp-content/uploads/2016/03/Placeholder.png"
+						imgurl="https://lh3.googleusercontent.com/proxy/VqgxA_66FhsaWsm0g6dLUU_CJkja3wsqey3ZN-ejH1BdTikJEYhVRF7Sy8dOMjzNkQqMcw1HxPFw1wyNJT_E1Apfr1D56XhsJZtMC1y1mGC2=w1392-h1313-p-rw"
 						text="Contact Us"
 					/>
 				</div>
 			</Link>
-			<Link to="/products">
+			<Link to="/rent">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
 						imgurl="https://designshack.net/wp-content/uploads/placeholder-image.png"
@@ -24,8 +24,9 @@ const SubHead = props => {
 			<Link to="/login">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						imgurl="http://www.ieeeaustsb.org/files/2017/05/placeholder-female-square.png"
+						//imgurl="https://requestreduce.org/images/black-and-white-money-clipart-17.png"
 						text="Start Selling"
+						style={{ background: "#6ce296" }}
 					/>
 				</div>
 			</Link>

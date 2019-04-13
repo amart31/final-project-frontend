@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 //styles import
 import "../../../styles/featuredproducts.css";
@@ -8,9 +9,9 @@ const FeaturedProducts = props => {
 		<div>
 			<div className="img-card">
 				<img
-					src="http://via.placeholder.com/640x360"
+					src={props.source}
 					alt="Card image cap"
-					style={{ width: "100%" }}
+					style={{ maxWidth: "100%", maxHeight: "100%" }}
 				/>
 				<div className="centered-text">Card description</div>
 			</div>
@@ -19,3 +20,7 @@ const FeaturedProducts = props => {
 };
 
 export default FeaturedProducts;
+
+FeaturedProducts.propTypes = {
+	source: PropTypes.func
+};

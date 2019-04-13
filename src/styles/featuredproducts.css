@@ -1,7 +1,8 @@
 .img-card {
   position: relative;
   text-align: center;
-  color: white;
+  color: #d9d9d9;
+  height: 300px;
 }
 .centered-text {
   position: absolute;
