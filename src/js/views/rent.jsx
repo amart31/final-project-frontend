@@ -9,6 +9,7 @@ import {
 	CardSubtitle,
 	Button,
 	Container,
+	Jumbotron,
 	Row,
 	Col
 } from "reactstrap";
@@ -18,7 +19,7 @@ import { Context } from "../store/appContext.jsx";
 import FilterProducts from "../component/filterProducts.js";
 import ProductForm from "../component/productForm.js";
 
-import "../../styles/demo.css";
+import "../../styles/rent.css";
 
 export class Rent extends React.Component {
 	constructor(props) {
@@ -55,6 +56,11 @@ export class Rent extends React.Component {
 	render() {
 		return (
 			<Container>
+				<Jumbotron fluid className="jumbotron text-white">
+					<Container fluid>
+						<h1 className="display-3">Products</h1>
+					</Container>
+				</Jumbotron>
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
@@ -71,12 +77,17 @@ export class Rent extends React.Component {
 					}}
 				</Context.Consumer>
 				<div className="container-fluid">
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return store.products.map((item, index) => {
-								return (
-									<Row key={index}>
-										<Col sm="3">
+					<Row>
+						<Context.Consumer>
+							{({ store, actions }) => {
+								return store.products.map((item, index) => {
+									return (
+										<Col
+											sm="4"
+											md="4"
+											lg="4"
+											xl="4"
+											key={index}>
 											<Card>
 												<CardImg
 													top
@@ -124,11 +135,11 @@ export class Rent extends React.Component {
 												</CardBody>
 											</Card>
 										</Col>
-									</Row>
-								);
-							});
-						}}
-					</Context.Consumer>
+									);
+								});
+							}}
+						</Context.Consumer>
+					</Row>
 					<br />
 					<Link to="/">
 						<button className="btn btn-primary">Back home</button>
@@ -141,7 +152,9 @@ export class Rent extends React.Component {
 Rent.propTypes = {
 	match: PropTypes.object
 };
-
+Jumbotron.propTypes = {
+	className: PropTypes.string
+};
 CardImg.propTypes = {
 	src: PropTypes.string,
 	className: PropTypes.string,
