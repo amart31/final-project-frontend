@@ -6,7 +6,8 @@ const jumbostyle = {
 	backgroundImage: "url(" + imgUrl + ")",
 	backgroundSize: "cover",
 	color: "#4a82db",
-	height: "500px"
+	height: "500px",
+	textShadow: "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black"
 };
 
 const Jumbotron = () => {

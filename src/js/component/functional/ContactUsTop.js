@@ -9,7 +9,7 @@ const ContactUsTop = () => {
 				IF YOU HAVE ANY QUESTIONS FEEL FREE TO SEND US AN EMAIL BELOW.
 			</p>
 			<p>
-				Check our <Link to="/FAQ">FAQs </Link>
+				Check our <Link to="/faqs">FAQs </Link>
 				for some of the most common questions. If you still have any
 				unanswered questions feel free to send us a message.
 			</p>

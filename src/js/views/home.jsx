@@ -10,7 +10,7 @@ import "../../styles/home.css";
 export class Home extends React.Component {
 	render() {
 		return (
-			<div className="body">
+			<div className="body mb-5">
 				<Jumbotron />
 				<div className="subheading">
 					<SubHead />

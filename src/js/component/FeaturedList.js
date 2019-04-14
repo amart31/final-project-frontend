@@ -16,10 +16,17 @@ class FeaturedList extends React.Component {
 									<div className="col-md pt-2 pb-2">
 										<FeaturedProducts
 											source={
-												store.products[0]
-													? store.products[0].image
+												store.products[9]
+													? store.products[9].image
 													: ""
 											}
+											title={
+												store.products[9]
+													? store.products[9]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 9}
 										/>
 									</div>
 									<div className="col-md pt-2 pb-2">
@@ -29,6 +36,13 @@ class FeaturedList extends React.Component {
 													? store.products[1].image
 													: ""
 											}
+											title={
+												store.products[1]
+													? store.products[1]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 1}
 										/>
 									</div>
 									<div className="col-md pt-2 pb-2">
@@ -38,6 +52,13 @@ class FeaturedList extends React.Component {
 													? store.products[2].image
 													: ""
 											}
+											title={
+												store.products[2]
+													? store.products[2]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 2}
 										/>
 									</div>
 								</div>
@@ -49,6 +70,13 @@ class FeaturedList extends React.Component {
 													? store.products[3].image
 													: ""
 											}
+											title={
+												store.products[3]
+													? store.products[3]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 3}
 										/>
 									</div>
 									<div className="col-md pt-2 pb-2">
@@ -58,15 +86,29 @@ class FeaturedList extends React.Component {
 													? store.products[4].image
 													: ""
 											}
+											title={
+												store.products[4]
+													? store.products[4]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 4}
 										/>
 									</div>
 									<div className="col-md pt-2 pb-2">
 										<FeaturedProducts
 											source={
-												store.products[5]
-													? store.products[5].image
+												store.products[7]
+													? store.products[7].image
 													: ""
 											}
+											title={
+												store.products[7]
+													? store.products[7]
+															.post_title
+													: ""
+											}
+											link={"/item/" + 7}
 										/>
 									</div>
 								</div>

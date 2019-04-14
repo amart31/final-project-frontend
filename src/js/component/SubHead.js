@@ -8,7 +8,7 @@ const SubHead = props => {
 			<Link to="/contact">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						imgurl="https://lh3.googleusercontent.com/proxy/VqgxA_66FhsaWsm0g6dLUU_CJkja3wsqey3ZN-ejH1BdTikJEYhVRF7Sy8dOMjzNkQqMcw1HxPFw1wyNJT_E1Apfr1D56XhsJZtMC1y1mGC2=w1392-h1313-p-rw"
+						style={{ background: "#4286f4" }}
 						text="Contact Us"
 					/>
 				</div>
@@ -16,7 +16,7 @@ const SubHead = props => {
 			<Link to="/rent">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						imgurl="https://designshack.net/wp-content/uploads/placeholder-image.png"
+						style={{ background: "#7d39d6" }}
 						text="Shop the feed"
 					/>
 				</div>

@@ -3,10 +3,9 @@
   text-align: center;
   color: #d9d9d9;
   height: 300px;
+  width: 350px;
+  
 }
 .centered-text {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
 }
