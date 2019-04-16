@@ -3,9 +3,47 @@ const getState = ({ getStore, setStore }) => {
 		store: {
 			products: [],
 			shoppingCart: [],
-			rows: []
+			session: {
+				isLoggedIn: false,
+				user: "",
+				pass: ""
+			}
 		},
 		actions: {
+			login: (user, pass) => {
+				const endpoint =
+					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
+				fetch(endpoint, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						username: user,
+						password: pass
+					})
+				}).then(res => {
+					if (res.status !== 200) {
+						console.log("error" + res.status);
+						return;
+					}
+					res.json()
+						.then(data => {
+							let store = this.state.store;
+
+							store.session = data;
+							this.setState({
+								isLoggedIn: true,
+								user: data.username,
+								pass: data.password
+							});
+						})
+						.catch(err => {
+							alert("Fetch error: ", err);
+						});
+				});
+			},
+
 			addToCart: item => {
 				//get the store
 				const store = getStore();

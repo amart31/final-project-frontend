@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
-
 let imgUrl =
 	"https://images.pexels.com/photos/1345082/pexels-photo-1345082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
 const jumbostyle = {
@@ -27,7 +24,7 @@ const Jumbotron = () => {
 					Shop latest drop
 					{"  "}
 					<Link to="/rent">
-						<FontAwesomeIcon icon={faArrowCircleRight} />
+						<i className="fas fa-arrow-right" />
 					</Link>
 				</h2>
 			</div>

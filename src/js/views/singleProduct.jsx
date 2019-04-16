@@ -13,7 +13,6 @@ import {
 	Card,
 	Button,
 	CardTitle,
-	Container,
 	CardText,
 	Row,
 	Col
@@ -44,7 +43,7 @@ export class Item extends React.Component {
 					{({ store, actions }) => {
 						return (
 							<div className="container-fluid">
-								<Jumbotron>
+								<Jumbotron className="jumbotron text-white">
 									<h1 className="display-3">
 										{
 											store.products[

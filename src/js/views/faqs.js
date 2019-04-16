@@ -10,7 +10,7 @@ const FAQs = () => {
 				<h4 className="marker">Q</h4>
 				<h4 className="lead">
 					Lorem Ipsum is simply dummy text of the printing and
-					typesetting industry. Lorem Ipsum has been the industry's.
+					typesetting industry. Lorem Ipsum has been the industrys.
 				</h4>
 			</div>
 			<div className="answer">
