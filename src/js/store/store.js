@@ -34,7 +34,7 @@ const getState = ({ getStore, setStore }) => {
 							store.session = data;
 							this.setState({
 								isLoggedIn: true,
-								user: data.username,
+								user: data.user_nicename,
 								pass: data.password
 							});
 						})

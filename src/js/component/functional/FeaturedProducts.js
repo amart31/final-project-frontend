@@ -29,7 +29,7 @@ const FeaturedProducts = props => {
 export default FeaturedProducts;
 
 FeaturedProducts.propTypes = {
-	source: PropTypes.func,
-	title: PropTypes.func,
-	link: PropTypes.func
+	source: PropTypes.string,
+	title: PropTypes.string,
+	link: PropTypes.string
 };

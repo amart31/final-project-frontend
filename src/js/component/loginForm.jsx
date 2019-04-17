@@ -1,15 +1,5 @@
 import React from "react";
-import {
-	Container,
-	Col,
-	Form,
-	FormGroup,
-	Label,
-	Input,
-	Button,
-	FormText,
-	FormFeedback
-} from "reactstrap";
+import { Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Context } from "../store/appContext.jsx";
 
 export default class LoginForm extends React.Component {
@@ -19,52 +9,72 @@ export default class LoginForm extends React.Component {
 			user: "",
 			pass: ""
 		};
+		this.user = React.createRef();
+		this.pass = React.createRef();
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
+	handleChange(event) {
+		this.setState({ value: event.target.value });
+	}
+
 	handleFormSubmit(event) {
 		event.preventDefault();
 		console.log(this.state);
 	}
 	render() {
 		return (
-			<Container>
-				<h2>Log In</h2>
-				<Form>
-					<Col>
-						<FormGroup>
-							<Label htmlFor="email">Email</Label>
-							<Input
-								type="email"
-								name="email"
-								id="email"
-								value={this.state.email}
-								placeholder="example@mail.com"
-								onChange={e =>
-									this.setState({ email: e.target.value })
-								}
-							/>
-						</FormGroup>
-					</Col>
-					<Col>
-						<FormGroup>
-							<Label htmlFor="userPass">Password</Label>
-							<Input
-								type="password"
-								name="userPass"
-								id="userPass"
-								value={this.state.userPass}
-								placeholder="password placeholder"
-								onChange={e =>
-									this.setState({
-										userPass: e.target.value
-									})
-								}
-							/>
-						</FormGroup>
-					</Col>
-					<Button onClick={this.handleFormSubmit}>Submit</Button>
-				</Form>
-			</Container>
+			<div>
+				<Context.Consumer>
+					{({ store, actions }) => {
+						return (
+							<div>
+								<h2>Log In</h2>
+								<Form>
+									<Col>
+										<FormGroup>
+											<Label htmlFor="email">Email</Label>
+											<Input
+												type="email"
+												name="email"
+												ref={this.user}
+												placeholder="example@mail.com"
+												onChange={e =>
+													this.setState({
+														email:
+															event.target.value
+													})
+												}
+											/>
+										</FormGroup>
+									</Col>
+									<Col>
+										<FormGroup>
+											<Label htmlFor="userPass">
+												Password
+											</Label>
+											<Input
+												type="password"
+												name="userPass"
+												ref={this.pass}
+												placeholder="password placeholder"
+												onChange={e =>
+													this.setState({
+														userPass:
+															event.target.value
+													})
+												}
+											/>
+										</FormGroup>
+									</Col>
+									<Button onClick={this.handleFormSubmit}>
+										Submit
+									</Button>
+								</Form>
+							</div>
+						);
+					}}
+				</Context.Consumer>
+			</div>
 		);
 	}
 }
