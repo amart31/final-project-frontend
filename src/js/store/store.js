@@ -5,14 +5,29 @@ const getState = ({ getStore, setStore }) => {
 			shoppingCart: [],
 			session: {
 				isLoggedIn: false,
-				user: "",
-				pass: ""
+				token: "",
+				user_display_name: "",
+				user_email: "",
+				user_nicename: ""
 			}
 		},
 		actions: {
+			handleFormSubmit: () => {
+				event.preventDefault();
+				const store = getStore();
+				let session = store.session;
+				if (session.isLoggedIn === true) {
+					alert("sucess");
+				} else {
+					alert("error");
+				}
+				return;
+			},
 			login: (user, pass) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
+
+				console.log(user, pass);
 				fetch(endpoint, {
 					method: "POST",
 					headers: {
@@ -22,26 +37,25 @@ const getState = ({ getStore, setStore }) => {
 						username: user,
 						password: pass
 					})
-				}).then(res => {
-					if (res.status !== 200) {
-						console.log("error" + res.status);
-						return;
-					}
-					res.json()
-						.then(data => {
-							let store = this.state.store;
+				})
+					.then(res => {
+						if (res.status !== 200) {
+							console.log("error" + res.status);
+							return;
+						}
+						res.json().then(data => {
+							let store = getStore();
 
 							store.session = data;
-							this.setState({
-								isLoggedIn: true,
-								user: data.user_nicename,
-								pass: data.password
+							store.session.isLoggedIn = true;
+							setStore({
+								store
 							});
-						})
-						.catch(err => {
-							alert("Fetch error: ", err);
 						});
-				});
+					})
+					.catch(err => {
+						alert("Fetch error: ", err);
+					});
 			},
 
 			addToCart: item => {

@@ -11,16 +11,11 @@ export default class LoginForm extends React.Component {
 		};
 		this.user = React.createRef();
 		this.pass = React.createRef();
-		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}
 	handleChange(event) {
 		this.setState({ value: event.target.value });
 	}
 
-	handleFormSubmit(event) {
-		event.preventDefault();
-		console.log(this.state);
-	}
 	render() {
 		return (
 			<div>
@@ -29,19 +24,20 @@ export default class LoginForm extends React.Component {
 						return (
 							<div>
 								<h2>Log In</h2>
-								<Form>
+								<Form onSubmit={actions.handleFormSubmit}>
 									<Col>
 										<FormGroup>
-											<Label htmlFor="email">Email</Label>
+											<Label htmlFor="username">
+												Username
+											</Label>
 											<Input
-												type="email"
-												name="email"
+												type="text"
+												name="username"
 												ref={this.user}
-												placeholder="example@mail.com"
+												placeholder=""
 												onChange={e =>
 													this.setState({
-														email:
-															event.target.value
+														user: e.target.value
 													})
 												}
 											/>
@@ -59,14 +55,21 @@ export default class LoginForm extends React.Component {
 												placeholder="password placeholder"
 												onChange={e =>
 													this.setState({
-														userPass:
-															event.target.value
+														pass: e.target.value
 													})
 												}
 											/>
 										</FormGroup>
 									</Col>
-									<Button onClick={this.handleFormSubmit}>
+									<Button
+										onClick={() => {
+											this.setState({
+												session: actions.login(
+													this.state.user,
+													this.state.pass
+												)
+											});
+										}}>
 										Submit
 									</Button>
 								</Form>

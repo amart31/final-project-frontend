@@ -10,10 +10,8 @@ import {
 	CardHeader,
 	CardFooter,
 	CardBody,
-	CardTitle,
 	Container,
 	Row,
-	Media,
 	Col
 } from "reactstrap";
 
