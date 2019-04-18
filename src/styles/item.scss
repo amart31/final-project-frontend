@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+.new-product{
+    background: green;
+    width: 50px;
+    color:white;
+    font-size:12px;
+    font-weight:bold;
+}
+.price{
+    color: #FE980F;
+    font-size:26px;
+    font-weight:bold;
+    
+}
+input{
+    border: 1px solid;
+    height: 33px;
+    text-align: center;
+    font-weight:bold;
+    width: 30px;
+}

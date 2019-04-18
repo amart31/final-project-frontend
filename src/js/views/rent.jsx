@@ -9,9 +9,8 @@ import {
 	CardSubtitle,
 	Button,
 	Container,
-	Jumbotron,
 	Row,
-	Col
+	Jumbotron
 } from "reactstrap";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
@@ -56,7 +55,7 @@ export class Rent extends React.Component {
 	render() {
 		return (
 			<Container>
-				<Jumbotron fluid className="jumbotron text-white">
+				<Jumbotron fluid className="jumbotron text-primary">
 					<Container fluid>
 						<h1 className="display-3">Products</h1>
 					</Container>
@@ -82,12 +81,9 @@ export class Rent extends React.Component {
 							{({ store, actions }) => {
 								return store.products.map((item, index) => {
 									return (
-										<Col
-											sm="1"
-											md="2"
-											lg="3"
-											xl="4"
-											key={index}>
+										<div
+											className="col-md-6 col-lg-4 pb-2"
+											key={item.ID}>
 											<Card>
 												<CardImg
 													top
@@ -96,7 +92,8 @@ export class Rent extends React.Component {
 													alt="Card image cap"
 												/>
 												<CardBody>
-													<Link to={"/item/" + index}>
+													<Link
+														to={"/item/" + item.ID}>
 														<CardTitle>
 															{item.post_title}
 														</CardTitle>
@@ -134,7 +131,7 @@ export class Rent extends React.Component {
 													</Button>
 												</CardBody>
 											</Card>
-										</Col>
+										</div>
 									);
 								});
 							}}
