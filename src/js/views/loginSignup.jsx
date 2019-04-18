@@ -11,11 +11,7 @@ export class Login extends React.Component {
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			activeTab: "1",
-			session: {
-				name: "",
-				email: ""
-			}
+			activeTab: "1"
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 	}

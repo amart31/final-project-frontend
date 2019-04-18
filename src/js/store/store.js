@@ -12,17 +12,6 @@ const getState = ({ getStore, setStore }) => {
 			}
 		},
 		actions: {
-			handleFormSubmit: () => {
-				event.preventDefault();
-				const store = getStore();
-				let session = store.session;
-				if (session.isLoggedIn === true) {
-					alert("sucess");
-				} else {
-					alert("error");
-				}
-				return;
-			},
 			login: (user, pass) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";

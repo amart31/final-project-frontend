@@ -20,7 +20,12 @@ export class Account extends React.Component {
 						return (
 							<div>
 								<h1>Account Settings</h1>
-								<p>{store.session.user_nicename}</p>
+								<div>
+									<p>
+										username:&nbsp;
+										{store.session.user_nicename}
+									</p>
+								</div>
 							</div>
 						);
 					}}

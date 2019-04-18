@@ -83,9 +83,9 @@ export class Rent extends React.Component {
 								return store.products.map((item, index) => {
 									return (
 										<Col
-											sm="4"
-											md="4"
-											lg="4"
+											sm="1"
+											md="2"
+											lg="3"
 											xl="4"
 											key={index}>
 											<Card>
