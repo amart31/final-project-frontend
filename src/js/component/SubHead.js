@@ -8,7 +8,10 @@ const SubHead = props => {
 			<Link to="/contact">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						style={{ background: "#4286f4" }}
+						style={{
+							border: "1px solid #4a82db",
+							color: "#4a82db"
+						}}
 						text="Contact Us"
 					/>
 				</div>
@@ -16,7 +19,10 @@ const SubHead = props => {
 			<Link to="/rent">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						style={{ background: "#7d39d6" }}
+						style={{
+							border: "1px solid #4a82db",
+							color: "#4a82db"
+						}}
 						text="Shop the feed"
 					/>
 				</div>
@@ -24,12 +30,32 @@ const SubHead = props => {
 			<Link to="/login">
 				<div className="d-inline-block m-3">
 					<SubHeadCard
-						//imgurl="https://requestreduce.org/images/black-and-white-money-clipart-17.png"
 						text="Start Selling"
-						style={{ background: "#6ce296" }}
+						style={{
+							border: "1px solid #4a82db",
+							color: "#4a82db"
+						}}
 					/>
 				</div>
 			</Link>
+			<div className="d-inline-block m-3">
+				<SubHeadCard
+					text="Insurance Policy"
+					style={{
+						border: "1px solid #4a82db",
+						color: "#4a82db"
+					}}
+				/>
+			</div>
+			<div className="d-inline-block m-3">
+				<SubHeadCard
+					text="Buyer Protection"
+					style={{
+						border: "1px solid #4a82db",
+						color: "#4a82db"
+					}}
+				/>
+			</div>
 		</div>
 	);
 };

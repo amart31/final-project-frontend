@@ -1,8 +1,11 @@
 import React from "react";
 import { Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Context } from "../store/appContext.jsx";
+<<<<<<< HEAD
 import { Home } from "../views/home.jsx";
 import { Link } from "react-router-dom";
+=======
+>>>>>>> 0b8172f07e5e4324e46d11e68434d7cc4f6c6d8f
 
 export default class LoginForm extends React.Component {
 	constructor(props) {
@@ -14,60 +17,69 @@ export default class LoginForm extends React.Component {
 		this.user = React.createRef();
 		this.pass = React.createRef();
 	}
-	handleSubmit(event) {
-		alert("Welcome" + this.state.user);
-		event.preventDefault();
+	handleChange(event) {
+		this.setState({ value: event.target.value });
 	}
+
 	render() {
 		return (
 			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						if (store.session.isLoggedIn == true) {
-							alert("Welcome " + store.session.user_nicename);
-							return <Home />;
-						} else {
-							return (
-								<div>
-									<h2>Log In</h2>
-									<Form onSubmit={e => e.preventDefault}>
-										<Col>
-											<FormGroup>
-												<Label htmlFor="username">
-													Username
-												</Label>
-												<Input
-													type="text"
-													name="username"
-													ref={this.user}
-													placeholder=""
-													onChange={e =>
-														this.setState({
-															user: e.target.value
-														})
-													}
-												/>
-											</FormGroup>
-										</Col>
-										<Col>
-											<FormGroup>
-												<Label htmlFor="userPass">
-													Password
-												</Label>
-												<Input
-													type="password"
-													name="userPass"
-													ref={this.pass}
-													placeholder="password placeholder"
-													onChange={e =>
-														this.setState({
-															pass: e.target.value
-														})
-													}
-												/>
-											</FormGroup>
-										</Col>
+						return (
+							<div
+								className="container text-center border"
+								style={{
+									width: "500px",
+									color: "#4a82db",
+									background: "#a9b6cc"
+								}}>
+								<h2 className="mt-5 pt-3">Log In</h2>
+								<Form onSubmit={actions.handleFormSubmit}>
+									<FormGroup>
+										<Label htmlFor="username">
+											Username:
+										</Label>
+										<Input
+											style={{
+												width: "300px",
+												margin: "0 auto"
+											}}
+											type="text"
+											name="username"
+											ref={this.user}
+											placeholder="username"
+											onChange={e =>
+												this.setState({
+													user: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+
+									<FormGroup>
+										<Label htmlFor="userPass">
+											Password:
+										</Label>
+										<Input
+											style={{
+												width: "300px",
+												margin: "0 auto"
+											}}
+											type="password"
+											name="userPass"
+											ref={this.pass}
+											placeholder="password"
+											onChange={e =>
+												this.setState({
+													pass: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+									<div className="text-center pb-5 mb-5">
 										<Button
+											color="primary"
 											onClick={() => {
 												this.setState({
 													session: actions.login(
@@ -78,10 +90,10 @@ export default class LoginForm extends React.Component {
 											}}>
 											Submit
 										</Button>
-									</Form>
-								</div>
-							);
-						}
+									</div>
+								</Form>
+							</div>
+						);
 					}}
 				</Context.Consumer>
 			</div>
