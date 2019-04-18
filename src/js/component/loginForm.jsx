@@ -22,19 +22,28 @@ export default class LoginForm extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div className="container text-center">
-								<h2>Log In</h2>
+							<div
+								className="container text-center border"
+								style={{
+									width: "500px",
+									color: "#4a82db",
+									background: "#a9b6cc"
+								}}>
+								<h2 className="mt-5 pt-3">Log In</h2>
 								<Form onSubmit={actions.handleFormSubmit}>
 									<FormGroup>
 										<Label htmlFor="username">
 											Username:
 										</Label>
 										<Input
-											style={{ width: "300px" }}
+											style={{
+												width: "300px",
+												margin: "0 auto"
+											}}
 											type="text"
 											name="username"
 											ref={this.user}
-											placeholder=""
+											placeholder="username"
 											onChange={e =>
 												this.setState({
 													user: e.target.value
@@ -48,10 +57,14 @@ export default class LoginForm extends React.Component {
 											Password:
 										</Label>
 										<Input
+											style={{
+												width: "300px",
+												margin: "0 auto"
+											}}
 											type="password"
 											name="userPass"
 											ref={this.pass}
-											placeholder="password placeholder"
+											placeholder="password"
 											onChange={e =>
 												this.setState({
 													pass: e.target.value
@@ -74,7 +87,6 @@ export default class LoginForm extends React.Component {
 										</Button>
 									</div>
 								</Form>
-						
 							</div>
 						);
 					}}
