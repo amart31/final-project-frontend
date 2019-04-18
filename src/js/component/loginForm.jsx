@@ -2,6 +2,7 @@ import React from "react";
 import { Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Context } from "../store/appContext.jsx";
 import { Home } from "../views/home.jsx";
+import { Link } from "react-router-dom";
 
 export default class LoginForm extends React.Component {
 	constructor(props) {
