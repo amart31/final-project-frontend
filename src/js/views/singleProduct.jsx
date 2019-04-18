@@ -18,6 +18,11 @@ export class Item extends React.Component {
 
 					return (
 						<div className="my-5">
+							<div className="px-3 pb-1">
+								<Link to={"/rent/"}>
+									<i className="fas fa-chevron-left fa-lg" />
+								</Link>
+							</div>
 							<div className="container-fluid">
 								<div className="row">
 									<div className="col-md-5">
@@ -29,7 +34,7 @@ export class Item extends React.Component {
 												<div className="carousel-item active">
 													<img
 														src={product[0].image}
-														className="d-block w-100"
+														className="d-block w-100 carouselImg"
 														alt="product image"
 													/>
 												</div>

@@ -86,6 +86,7 @@ export class Rent extends React.Component {
 											key={item.ID}>
 											<Card>
 												<CardImg
+													className="card-img-top"
 													top
 													width="100%"
 													src={item.image}

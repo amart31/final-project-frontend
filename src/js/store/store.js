@@ -3,6 +3,8 @@ const getState = ({ getStore, setStore }) => {
 		store: {
 			products: [],
 			shoppingCart: [],
+			wishList: [],
+			featuredProducts: [],
 			session: {
 				isLoggedIn: false,
 				token: "",
@@ -53,7 +55,7 @@ const getState = ({ getStore, setStore }) => {
 				let shoppingCart = store.shoppingCart;
 				let i = 0;
 				let itemTotal = 0;
-				var total = 0;
+				let total = 0;
 				//loop the products to look for index
 				let product = shoppingCart.find((cartItem, index) => {
 					if (cartItem.item === item) {
@@ -78,7 +80,7 @@ const getState = ({ getStore, setStore }) => {
 					total =
 						shoppingCart[i].count *
 						shoppingCart[i].item.meta_keys.product_price;
-					console.log(itemTotal);
+					console.log(total);
 				}
 
 				setStore({ shoppingCart: shoppingCart });
