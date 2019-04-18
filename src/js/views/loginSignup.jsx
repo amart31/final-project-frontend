@@ -1,5 +1,13 @@
 import React from "react";
-import { TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
+import {
+	TabContent,
+	TabPane,
+	Nav,
+	NavItem,
+	NavLink,
+	Jumbotron,
+	Container
+} from "reactstrap";
 import classnames from "classnames";
 
 import SignupForm from "../component/signupForm.jsx";
@@ -35,6 +43,21 @@ export class Login extends React.Component {
 	render() {
 		return (
 			<div>
+				<Container
+					fluid
+					style={{
+						height: "200px",
+						textAlign: "center",
+						padding: "0",
+						color: "#4a82db"
+					}}>
+					<h1 className="display-3">Welcome to ReactCloset</h1>
+					<p className="lead">
+						{" "}
+						Please
+						{this.state.activeTab == 1 ? " Log In" : " Sign Up"}
+					</p>
+				</Container>
 				<Nav tabs>
 					<NavItem>
 						<NavLink

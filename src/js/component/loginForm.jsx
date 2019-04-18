@@ -22,56 +22,57 @@ export default class LoginForm extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div>
+							<div className="container text-center">
 								<h2>Log In</h2>
 								<Form onSubmit={actions.handleFormSubmit}>
-									<Col>
-										<FormGroup>
-											<Label htmlFor="username">
-												Username
-											</Label>
-											<Input
-												type="text"
-												name="username"
-												ref={this.user}
-												placeholder=""
-												onChange={e =>
-													this.setState({
-														user: e.target.value
-													})
-												}
-											/>
-										</FormGroup>
-									</Col>
-									<Col>
-										<FormGroup>
-											<Label htmlFor="userPass">
-												Password
-											</Label>
-											<Input
-												type="password"
-												name="userPass"
-												ref={this.pass}
-												placeholder="password placeholder"
-												onChange={e =>
-													this.setState({
-														pass: e.target.value
-													})
-												}
-											/>
-										</FormGroup>
-									</Col>
-									<Button
-										onClick={() => {
-											this.setState({
-												session: actions.login(
-													this.state.user,
-													this.state.pass
-												)
-											});
-										}}>
-										Submit
-									</Button>
+									<FormGroup>
+										<Label htmlFor="username">
+											Username:
+										</Label>
+										<Input
+											style={{ width: "300px" }}
+											type="text"
+											name="username"
+											ref={this.user}
+											placeholder=""
+											onChange={e =>
+												this.setState({
+													user: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+
+									<FormGroup>
+										<Label htmlFor="userPass">
+											Password:
+										</Label>
+										<Input
+											type="password"
+											name="userPass"
+											ref={this.pass}
+											placeholder="password placeholder"
+											onChange={e =>
+												this.setState({
+													pass: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+									<div className="text-center pb-5 mb-5">
+										<Button
+											color="primary"
+											onClick={() => {
+												this.setState({
+													session: actions.login(
+														this.state.user,
+														this.state.pass
+													)
+												});
+											}}>
+											Submit
+										</Button>
+									</div>
 								</Form>
 							</div>
 						);

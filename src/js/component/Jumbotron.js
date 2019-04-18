@@ -12,7 +12,7 @@ const jumbostyle = {
 };
 const h2Style = {
 	position: "absolute",
-	bottom: "60px",
+	bottom: "15px",
 	left: "50px"
 };
 
