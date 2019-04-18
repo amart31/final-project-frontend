@@ -10,7 +10,6 @@ class SubHeadCard extends React.Component {
 	render() {
 		return (
 			<div className="subheadbutton mr-4" style={this.props.style}>
-				<img src={this.props.imgurl} style={{ width: "100%" }} />
 				<div className="subhead-text">{this.props.text}</div>
 			</div>
 		);

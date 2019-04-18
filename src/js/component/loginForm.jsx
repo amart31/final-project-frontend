@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { Context } from "../store/appContext.jsx";
-import { Home } from "../views/home.jsx";
 
 export default class LoginForm extends React.Component {
 	constructor(props) {
@@ -13,60 +12,56 @@ export default class LoginForm extends React.Component {
 		this.user = React.createRef();
 		this.pass = React.createRef();
 	}
-	handleSubmit(event) {
-		alert("Welcome" + this.state.user);
-		event.preventDefault();
+	handleChange(event) {
+		this.setState({ value: event.target.value });
 	}
+
 	render() {
 		return (
 			<div>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						if (store.session.isLoggedIn == true) {
-							alert("Welcome " + store.session.user_nicename);
-							return <Home />;
-						} else {
-							return (
-								<div>
-									<h2>Log In</h2>
-									<Form onSubmit={e => e.preventDefault}>
-										<Col>
-											<FormGroup>
-												<Label htmlFor="username">
-													Username
-												</Label>
-												<Input
-													type="text"
-													name="username"
-													ref={this.user}
-													placeholder=""
-													onChange={e =>
-														this.setState({
-															user: e.target.value
-														})
-													}
-												/>
-											</FormGroup>
-										</Col>
-										<Col>
-											<FormGroup>
-												<Label htmlFor="userPass">
-													Password
-												</Label>
-												<Input
-													type="password"
-													name="userPass"
-													ref={this.pass}
-													placeholder="password placeholder"
-													onChange={e =>
-														this.setState({
-															pass: e.target.value
-														})
-													}
-												/>
-											</FormGroup>
-										</Col>
+						return (
+							<div className="container text-center">
+								<h2>Log In</h2>
+								<Form onSubmit={actions.handleFormSubmit}>
+									<FormGroup>
+										<Label htmlFor="username">
+											Username:
+										</Label>
+										<Input
+											style={{ width: "300px" }}
+											type="text"
+											name="username"
+											ref={this.user}
+											placeholder=""
+											onChange={e =>
+												this.setState({
+													user: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+
+									<FormGroup>
+										<Label htmlFor="userPass">
+											Password:
+										</Label>
+										<Input
+											type="password"
+											name="userPass"
+											ref={this.pass}
+											placeholder="password placeholder"
+											onChange={e =>
+												this.setState({
+													pass: e.target.value
+												})
+											}
+										/>
+									</FormGroup>
+									<div className="text-center pb-5 mb-5">
 										<Button
+											color="primary"
 											onClick={() => {
 												this.setState({
 													session: actions.login(
@@ -77,10 +72,11 @@ export default class LoginForm extends React.Component {
 											}}>
 											Submit
 										</Button>
-									</Form>
-								</div>
-							);
-						}
+									</div>
+								</Form>
+						
+							</div>
+						);
 					}}
 				</Context.Consumer>
 			</div>
