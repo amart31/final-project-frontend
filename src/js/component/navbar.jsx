@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext.jsx";
 import {
 	Collapse,
 	Navbar,
@@ -8,7 +9,6 @@ import {
 	Nav,
 	NavItem
 } from "reactstrap";
-import PropTypes from "prop-types";
 
 export default class NavBar extends React.Component {
 	constructor(props) {
@@ -16,7 +16,14 @@ export default class NavBar extends React.Component {
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			session: {
+				isLoggedIn: false,
+				token: "",
+				user_display_name: "",
+				user_email: "",
+				user_nicename: ""
+			}
 		};
 	}
 
@@ -28,62 +35,88 @@ export default class NavBar extends React.Component {
 	render() {
 		return (
 			<div>
-				<Navbar color="light" light expand="md">
+				<Navbar
+					className="d-flex align-items-center"
+					color="light"
+					light
+					expand="md">
 					<NavbarBrand href="/">Fashion Rentals</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
-						<Nav className="ml-auto" navbar>
-							<NavItem>
-								<Link to="/" className="mx-3">
-									Home
-								</Link>
-							</NavItem>
-							<NavItem>
-								<Link to="/login" className="mx-3">
-									Login
-								</Link>
-							</NavItem>
-							<NavItem>
-								<Link to="/rent" className="mx-3">
-									Rent
-								</Link>
-							</NavItem>
-							<NavItem>
-								<Link to="/account" className="mx-3">
-									Account
-								</Link>
-							</NavItem>
-							<NavItem>
-								<Link to="/cart" className="mx-3">
-									<i className="fas fa-shopping-cart" />
-								</Link>
-							</NavItem>
-						</Nav>
+						<Context.Consumer>
+							{({ store, actions }) => {
+								if (store.session.isLoggedIn) {
+									return (
+										<Nav className="ml-auto" navbar>
+											<NavItem>
+												<Link to="/" className="mx-3">
+													Home
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/rent"
+													className="mx-3">
+													Rent
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/account"
+													className="mx-3">
+													{
+														store.session
+															.user_nicename
+													}
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/cart"
+													className="mx-3">
+													<i className="fas fa-shopping-cart" />
+												</Link>
+											</NavItem>
+										</Nav>
+									);
+								} else {
+									return (
+										<Nav className="ml-auto" navbar>
+											<NavItem>
+												<Link to="/" className="mx-3">
+													Home
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/login"
+													className="mx-3"
+													id="login">
+													Login
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/rent"
+													className="mx-3">
+													Rent
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/cart"
+													className="mx-3">
+													<i className="fas fa-shopping-cart" />
+												</Link>
+											</NavItem>
+										</Nav>
+									);
+								}
+							}}
+						</Context.Consumer>
 					</Collapse>
 				</Navbar>
 			</div>
 		);
 	}
 }
-
-Navbar.propTypes = {
-	light: PropTypes.bool,
-	dark: PropTypes.bool,
-	fixed: PropTypes.string,
-	color: PropTypes.string,
-	role: PropTypes.string,
-	expand: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
-	tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-	// pass in custom element to use
-};
-
-NavbarBrand.propTypes = {
-	tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-	// pass in custom element to use
-};
-
-NavbarToggler.propTypes = {
-	type: PropTypes.string,
-	tag: PropTypes.oneOfType([PropTypes.func, PropTypes.string])
-	// pass in custom element to use
-};
