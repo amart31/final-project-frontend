@@ -20,7 +20,11 @@ export default class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div style={{ background: "#a9b6cc", height: "auto" }}>
+			<div
+				style={{
+					background: "#a9b6cc",
+					height: "-webkit-fill-available"
+				}}>
 				<Context.Consumer>
 					{({ store, actions }) => {
 						if (store.session.isLoggedIn === true) {
@@ -79,7 +83,7 @@ export default class LoginForm extends React.Component {
 												}
 											/>
 										</FormGroup>
-										<div className="text-center pb-5 mb-5">
+										<div className="text-center pb-2">
 											<Button
 												color="primary"
 												onClick={() => {
@@ -90,7 +94,7 @@ export default class LoginForm extends React.Component {
 														)
 													});
 												}}>
-												Submit
+												Log In
 											</Button>
 										</div>
 									</Form>
