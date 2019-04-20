@@ -1,6 +1,10 @@
 import React from "react";
 import { Context } from "../store/appContext.jsx";
 
+import "../../styles/account.css";
+import UserJumbo from "../component/userJumbo.js";
+import AccountSideMenu from "../component/accountSideMenu.js";
+
 export class Account extends React.Component {
 	constructor(props) {
 		super(props);
@@ -14,17 +18,21 @@ export class Account extends React.Component {
 	}
 	render() {
 		return (
-			<div className="text-center mt-5">
+			<div className="container-fluid mt-2">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div>
-								<h1>Account Settings</h1>
-								<div>
-									<p>
-										username:&nbsp;
-										{store.session.user_nicename}
-									</p>
+							<div className="container">
+								<UserJumbo
+									user_nicename={store.session.user_nicename}
+									user_email={store.session.user_email}
+								/>
+								<div className="wrapper">
+									<AccountSideMenu
+										user_nicename={
+											store.session.user_nicename
+										}
+									/>
 								</div>
 							</div>
 						);
