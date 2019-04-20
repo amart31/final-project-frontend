@@ -15,13 +15,12 @@ import FAQs from "./views/faqs";
 import Store from "./store/appContext.jsx";
 
 import NavBar from "./component/navbar.jsx";
-import { Footer } from "./component/footer.jsx";
 
 //create your first component
 export class Layout extends React.Component {
 	render() {
 		return (
-			<div className="d-flex flex-column h-100">
+			<div className="d-flex flex-column">
 				<BrowserRouter>
 					<ScrollToTop>
 						<NavBar />
@@ -37,7 +36,6 @@ export class Layout extends React.Component {
 							<Route path="/faqs" component={FAQs} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
-						<Footer />
 					</ScrollToTop>
 				</BrowserRouter>
 			</div>

@@ -13,6 +13,9 @@ import classnames from "classnames";
 import SignupForm from "../component/signupForm.jsx";
 import LoginForm from "../component/loginForm.jsx";
 
+//import of the style sheet
+import "../../styles/loginsignup.css";
+
 export class Login extends React.Component {
 	constructor(props) {
 		super(props);
@@ -39,45 +42,38 @@ export class Login extends React.Component {
 	render() {
 		return (
 			<div>
-				<Container
-					fluid
-					style={{
-						height: "200px",
-						textAlign: "center",
-						padding: "0",
-						color: "#4a82db"
-					}}>
-					<h1 className="display-3">Welcome to ReactCloset</h1>
-					<p className="lead">
-						{" "}
-						Please
-						{this.state.activeTab == 1 ? " Log In" : " Sign Up"}
-					</p>
-				</Container>
-				<Nav tabs>
-					<NavItem>
-						<NavLink
-							className={classnames({
-								active: this.state.activeTab === "1"
-							})}
-							onClick={() => {
-								this.toggle("1");
-							}}>
-							Log In
-						</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink
-							className={classnames({
-								active: this.state.activeTab === "2"
-							})}
-							onClick={() => {
-								this.toggle("2");
-							}}>
-							Sign Up
-						</NavLink>
-					</NavItem>
-				</Nav>
+				<div style={{ background: "#a9b6cc" }} className="row">
+					<Nav
+						tabs
+						style={{
+							border: "0",
+							margin: "0 auto",
+							width: "200px"
+						}}>
+						<NavItem style={{ width: "100px" }}>
+							<NavLink
+								className={classnames({
+									active: this.state.activeTab === "1"
+								})}
+								onClick={() => {
+									this.toggle("1");
+								}}>
+								Log In
+							</NavLink>
+						</NavItem>
+						<NavItem style={{ width: "100px" }}>
+							<NavLink
+								className={classnames({
+									active: this.state.activeTab === "2"
+								})}
+								onClick={() => {
+									this.toggle("2");
+								}}>
+								Sign Up
+							</NavLink>
+						</NavItem>
+					</Nav>
+				</div>
 				<TabContent activeTab={this.state.activeTab}>
 					<TabPane tabId="1">
 						<LoginForm />

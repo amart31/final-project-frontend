@@ -20,7 +20,7 @@ export default class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{ background: "#a9b6cc", height: "auto" }}>
 				<Context.Consumer>
 					{({ store, actions }) => {
 						if (store.session.isLoggedIn === true) {
@@ -32,9 +32,9 @@ export default class LoginForm extends React.Component {
 								<div
 									className="container text-center border"
 									style={{
-										width: "500px",
+										width: "400px",
 										color: "#4a82db",
-										background: "#a9b6cc"
+										background: "white"
 									}}>
 									<h2 className="mt-5 pt-3">Log In</h2>
 									<Form onSubmit={actions.handleFormSubmit}>
