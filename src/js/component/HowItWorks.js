@@ -5,6 +5,9 @@ import classnames from "classnames";
 //Styles import
 import "../../styles/howitworks.css";
 
+//modal imports
+import Lease1 from "./modals/Lease1";
+
 let style = {
 	borderBottom: "3px solid #4a82db",
 	marginBottom: "25px"
@@ -16,7 +19,8 @@ export default class HowItWorks extends React.Component {
 
 		this.toggle = this.toggle.bind(this);
 		this.state = {
-			activeTab: "1"
+			activeTab: "1",
+			isShowing: false
 		};
 	}
 
@@ -27,9 +31,26 @@ export default class HowItWorks extends React.Component {
 			});
 		}
 	}
+	openModalHandler = () => {
+		this.setState({
+			isShowing: true
+		});
+	};
+
+	closeModalHandler = () => {
+		this.setState({
+			isShowing: false
+		});
+	};
 	render() {
 		return (
 			<div>
+				{this.state.isShowing ? (
+					<div
+						onClick={this.closeModalHandler}
+						className="back-drop"
+					/>
+				) : null}
 				<div className="switcher">
 					<Nav tabs style={style}>
 						<NavItem>
@@ -62,7 +83,11 @@ export default class HowItWorks extends React.Component {
 							<div className="row">
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">1</div>
+										<div
+											className="stepnumber"
+											onClick={this.openModalHandler}>
+											1
+										</div>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 1:</strong>
@@ -166,6 +191,13 @@ export default class HowItWorks extends React.Component {
 						</div>
 					</TabPane>
 				</TabContent>
+				<Lease1
+					className="modal"
+					show={this.state.isShowing}
+					close={this.closeModalHandler}
+					body="Maybe aircrafts fly very high because they don't want to be
+					seen in plane sight?"
+				/>
 			</div>
 		);
 	}
