@@ -112,8 +112,8 @@ const getState = ({ getStore, setStore }) => {
 			setQty: (val, i) => {
 				const store = getStore();
 
-				store.shoppingCart[i].count = val.target.value;
-				setStore({ shoppingCart: store.shoppingCart });
+				store.shoppingCart[i].count = Number(val);
+				setStore({ store });
 			},
 			removeCartItem: item => {
 				const store = getStore();
@@ -122,6 +122,16 @@ const getState = ({ getStore, setStore }) => {
 					index = store.shoppingCart.indexOf(item);
 					store.shoppingCart.splice(index, 1);
 				}
+			},
+			cartTotalItems: () => {
+				const store = getStore();
+				let cartTotal = 0;
+
+				for (var obj in store.shoppingCart) {
+					let product = store.shoppingCart[obj];
+					cartTotal += product.count;
+				}
+				return cartTotal;
 			}
 		}
 	};

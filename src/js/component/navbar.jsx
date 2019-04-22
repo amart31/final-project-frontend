@@ -40,7 +40,11 @@ export default class NavBar extends React.Component {
 					color="light"
 					light
 					expand="md">
-					<NavbarBrand href="/">Fashion Rentals</NavbarBrand>
+					<Link to="/">
+						<span className="navbar-brand mb-0 h1">
+							Fashion Rentals
+						</span>
+					</Link>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Context.Consumer>
@@ -75,6 +79,9 @@ export default class NavBar extends React.Component {
 													to="/cart"
 													className="mx-3">
 													<i className="fas fa-shopping-cart" />
+													<span className="badge badge-pill badge-primary">
+														{actions.cartTotalItems()}
+													</span>
 												</Link>
 											</NavItem>
 										</Nav>
@@ -107,6 +114,9 @@ export default class NavBar extends React.Component {
 													to="/cart"
 													className="mx-3">
 													<i className="fas fa-shopping-cart" />
+													<span className="badge badge-pill badge-primary">
+														{actions.cartTotalItems()}
+													</span>
 												</Link>
 											</NavItem>
 										</Nav>

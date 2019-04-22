@@ -93,7 +93,8 @@ export class Cart extends React.Component {
 															<input
 																onChange={e =>
 																	actions.setQty(
-																		e,
+																		e.target
+																			.value,
 																		index
 																	)
 																}
