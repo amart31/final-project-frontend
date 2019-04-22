@@ -8,8 +8,11 @@ import PropTypes from "prop-types";
 const AccountSideMenu = props => {
 	return (
 		<nav id="sidebar">
+			<div className="sidebar-header">
+				<h3>{props.user_nicename}</h3>
+			</div>
 			<ul className="list-unstyled components">
-				<p>{props.user_nicename + " Settings"}</p>
+				<p>Account</p>
 				<li className="active">
 					<a href="#">Summary</a>
 				</li>
@@ -18,13 +21,13 @@ const AccountSideMenu = props => {
 				</li>
 				<li>
 					<a
-						href="#pageSubmenu"
+						href="#productSubmenu"
 						data-toggle="collapse"
 						aria-expanded="false"
-						className="dropdown-toggle">
+						className="dropdwpn-toggle">
 						Products
 					</a>
-					<ul className="collapse list-unstyled" id="pageSubmenu">
+					<ul className="collapse list-unstyled" id="productSubmenu">
 						<li>
 							<a href="#">Add Product</a>
 						</li>

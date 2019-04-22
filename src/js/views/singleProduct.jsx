@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
 import SimilarList from "../component/similarList.js";
-import "../../styles/singleProduct.scss";
 
 export class Item extends React.Component {
 	render() {
