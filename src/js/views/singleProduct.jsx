@@ -97,6 +97,8 @@ export class Item extends React.Component {
 												}
 											</p>
 											<hr />
+											<p>{product[0].post_author}</p>
+											<hr />
 											<div className="btn-group cart">
 												<button
 													onClick={() => {

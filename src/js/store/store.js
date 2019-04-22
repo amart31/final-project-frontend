@@ -14,6 +14,17 @@ const getState = ({ getStore, setStore }) => {
 			}
 		},
 		actions: {
+			// getAuthorName: (author, index) => {
+			// 	const store = getStore();
+
+			// 	let authorArr = store.products.filter(author => {
+			// 		if (author == author.post_author) return author.post_author;
+			// 	});
+
+			// 	if (authorArr !== []) {
+			// 		return authorArr[0];
+			// 	}
+			// },
 			login: (user, pass) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
