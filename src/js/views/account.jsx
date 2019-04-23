@@ -3,7 +3,8 @@ import { Context } from "../store/appContext.jsx";
 
 import "../../styles/account.css";
 import UserJumbo from "../component/userJumbo.js";
-import AccountSideMenu from "../component/accountSideMenu.js";
+import SavedItemCard from "../component/wishListItemCard.jsx";
+import AccountTabs from "../component/accountTabs.js";
 
 export class Account extends React.Component {
 	constructor(props) {
@@ -22,13 +23,13 @@ export class Account extends React.Component {
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
-							<div className="container">
+							<div className="container-fluid">
 								<UserJumbo
 									user_nicename={store.session.user_nicename}
 									user_email={store.session.user_email}
 								/>
-								<div className="wrapper">
-									<AccountSideMenu
+								<div className="container-fluid">
+									<AccountTabs
 										user_nicename={
 											store.session.user_nicename
 										}

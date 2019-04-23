@@ -100,19 +100,11 @@ export class Rent extends React.Component {
 														</CardTitle>
 													</Link>
 													<CardSubtitle>
-														<Row className="justify-content-between">
-															<span>
-																&#36;
-																{
-																	item
-																		.meta_keys
-																		.product_price
-																}
-															</span>
-															<span>
-																<i className="far fa-heart" />
-															</span>
-														</Row>
+														&#36;
+														{
+															item.meta_keys
+																.product_price
+														}
 													</CardSubtitle>
 													<CardText>
 														{
@@ -120,16 +112,28 @@ export class Rent extends React.Component {
 																.product_brand
 														}
 													</CardText>
-													<Button
-														onClick={() => {
-															this.setState({
-																shoppingCart: actions.addToCart(
+													<div className="d-flex justify-content-between">
+														<Button
+															color="success"
+															onClick={() => {
+																this.setState({
+																	shoppingCart: actions.addToCart(
+																		item
+																	)
+																});
+															}}>
+															Add to Cart
+														</Button>
+														<Button
+															color="danger"
+															onClick={() => {
+																actions.addToWishList(
 																	item
-																)
-															});
-														}}>
-														Add to Cart
-													</Button>
+																);
+															}}>
+															<i className="far fa-heart" />
+														</Button>
+													</div>
 												</CardBody>
 											</Card>
 										</div>

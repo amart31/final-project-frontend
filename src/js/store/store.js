@@ -60,6 +60,29 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 
+			addToWishList: item => {
+				const store = getStore();
+				let wishList = store.wishList;
+				let i = 0;
+
+				let product = wishList.find((wishListItem, index) => {
+					if (wishList.item === item) {
+						i = index;
+						return wishListItem;
+					}
+				});
+
+				if (typeof product !== "undefined") {
+					return product;
+				} else {
+					wishList.push({
+						item: item
+					});
+				}
+
+				setStore({ wishList: wishList });
+			},
+
 			addToCart: item => {
 				//get the store
 				const store = getStore();
