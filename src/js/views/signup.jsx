@@ -1,6 +1,6 @@
 import React from "react";
 import "../../styles/loginsignup.css";
-import SignupForm from "../component/signupForm.jsx";
+import ShortSignupForm from "../component/shortSignUp.jsx";
 
 export class Signup extends React.Component {
 	constructor(props) {
@@ -18,7 +18,7 @@ export class Signup extends React.Component {
 	render() {
 		return (
 			<div>
-				<SignupForm />
+				<ShortSignupForm />
 			</div>
 		);
 	}
