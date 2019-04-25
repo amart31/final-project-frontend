@@ -1,12 +1,22 @@
 import React from "react";
 // Reacstrap import
-import { TabContent, TabPane, Nav, NavItem, NavLink } from "reactstrap";
+import {
+	TabContent,
+	TabPane,
+	Nav,
+	NavItem,
+	NavLink,
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter
+} from "reactstrap";
 import classnames from "classnames";
 //Styles import
 import "../../styles/howitworks.css";
 
-//modal imports
-import Lease1 from "./modals/Lease1";
+import { Link } from "react-router-dom";
 
 let style = {
 	borderBottom: "3px solid #4a82db",
@@ -16,12 +26,22 @@ let style = {
 export default class HowItWorks extends React.Component {
 	constructor(props) {
 		super(props);
-
-		this.toggle = this.toggle.bind(this);
 		this.state = {
 			activeTab: "1",
-			isShowing: false
+			modalLease1: false,
+			modalLease2: false,
+			modalLease3: false,
+			modalRent1: false,
+			modalRent2: false,
+			modalRent3: false
 		};
+		this.toggle = this.toggle.bind(this);
+		this.toggleModalLease1 = this.toggleModalLease1.bind(this);
+		this.toggleModalLease2 = this.toggleModalLease2.bind(this);
+		this.toggleModalLease3 = this.toggleModalLease3.bind(this);
+		this.toggleModalRent1 = this.toggleModalRent1.bind(this);
+		this.toggleModalRent2 = this.toggleModalRent2.bind(this);
+		this.toggleModalRent3 = this.toggleModalRent3.bind(this);
 	}
 
 	toggle(tab) {
@@ -31,26 +51,40 @@ export default class HowItWorks extends React.Component {
 			});
 		}
 	}
-	openModalHandler = () => {
-		this.setState({
-			isShowing: true
-		});
-	};
+	toggleModalLease1() {
+		this.setState(prevState => ({
+			modalLease1: !prevState.modalLease1
+		}));
+	}
+	toggleModalLease2() {
+		this.setState(prevState => ({
+			modalLease2: !prevState.modalLease2
+		}));
+	}
+	toggleModalLease3() {
+		this.setState(prevState => ({
+			modalLease3: !prevState.modalLease3
+		}));
+	}
+	toggleModalRent1() {
+		this.setState(prevState => ({
+			modalRent1: !prevState.modalRent1
+		}));
+	}
+	toggleModalRent2() {
+		this.setState(prevState => ({
+			modalRent2: !prevState.modalRent2
+		}));
+	}
+	toggleModalRent3() {
+		this.setState(prevState => ({
+			modalRent3: !prevState.modalRent3
+		}));
+	}
 
-	closeModalHandler = () => {
-		this.setState({
-			isShowing: false
-		});
-	};
 	render() {
 		return (
 			<div>
-				{this.state.isShowing ? (
-					<div
-						onClick={this.closeModalHandler}
-						className="back-drop"
-					/>
-				) : null}
 				<div className="switcher">
 					<Nav tabs style={style}>
 						<NavItem>
@@ -83,15 +117,54 @@ export default class HowItWorks extends React.Component {
 							<div className="row">
 								<div className="col">
 									<div className="stepcard">
-										<div
+										<button
 											className="stepnumber"
-											onClick={this.openModalHandler}>
+											onClick={this.toggleModalLease1}>
 											1
-										</div>
+										</button>
+										<Modal
+											isOpen={this.state.modalLease1}
+											toggle={this.toggleModalLease1}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalLease1}>
+												Open an account
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														So you decided to take
+														the plunge and have
+														another source of
+														income?
+													</li>
+
+													<li>
+														Got fresh clothes ready
+														to ship and make you
+														money?
+													</li>
+													<li>
+														Then make an account and
+														list your clothes, we
+														insure every rental so
+														dont even worry about
+														it. We got you.
+													</li>
+												</ul>
+											</ModalBody>
+											<ModalFooter>
+												<Link to="/signup">
+													<Button color="primary">
+														Register
+													</Button>
+												</Link>
+											</ModalFooter>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 1:</strong>
-												List your clothes homes
+												List your clothes
 											</h5>
 											<img
 												width="300"
@@ -103,11 +176,50 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">2</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalLease2}>
+											2
+										</button>
+										<Modal
+											isOpen={this.state.modalLease2}
+											toggle={this.toggleModalLease2}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalLease2}>
+												So you opened the account?
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Once you post your items
+														people will be able to
+														rent them
+													</li>
+
+													<li>
+														Once a person rents the
+														clothes we will send you
+														a shipping
+														label(*FREE*). You can
+														now ship them, we have
+														rentals from 3 days to 2
+														weeks.
+													</li>
+													<li>
+														While you wait for your
+														clothes why not rent a
+														new fresh pair of patns
+														while you wait for the
+														renter to send it back.
+													</li>
+												</ul>
+											</ModalBody>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 1:</strong>
-												Rent your clothes homes
+												Rent your clothes
 											</h5>
 											<img
 												width="300"
@@ -119,7 +231,60 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">3</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalLease3}>
+											3
+										</button>
+										<Modal
+											isOpen={this.state.modalLease3}
+											toggle={this.toggleModalLease3}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalLease3}>
+												Get your items back
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														So its been a week and
+														the renter sent back
+														your sneakers? Now what?
+													</li>
+
+													<li>
+														It is our policy to have
+														the cleanest clothes on
+														the market, therefore
+														when you receive your
+														clothes you will also
+														recieve an extra bit of
+														cash so you can dry
+														clean your items.
+													</li>
+													<li>
+														Make everyday that you
+														dont have your items
+														listed count, time is
+														money after all.
+													</li>
+													<li>
+														Feel free to read our
+														insurance policy to
+														understand how we make
+														sure your items never
+														get stolen or damaged.
+													</li>
+												</ul>
+											</ModalBody>
+											<ModalFooter>
+												<Link to="/insurance">
+													<Button color="primary">
+														Insurance policy
+													</Button>
+												</Link>
+											</ModalFooter>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 3:</strong>
@@ -141,7 +306,63 @@ export default class HowItWorks extends React.Component {
 							<div className="row">
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">1</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent1}>
+											1
+										</button>
+										<Modal
+											isOpen={this.state.modalRent1}
+											toggle={this.toggleModalRent1}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent1}>
+												Register and Order
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Registration takes less
+														than 5 minutes. All you
+														need is a invitation
+														code, a valid driver
+														liscence and a cc or
+														paypal account.
+													</li>
+
+													<li>
+														Once set up, look
+														through our feed and
+														find the perfect fit for
+														the weekend.
+													</li>
+													<li>
+														All of your orders are
+														insured covered by our
+														$5 insurance policy. If
+														you scratch it, dont
+														worry we got you.
+													</li>
+													<li>
+														Please remember the
+														React Closet
+														decentrilized network
+														can only function
+														through good faith. With
+														that being said, we have
+														a strict one strike and
+														youre perma ban policy.
+													</li>
+												</ul>
+											</ModalBody>
+											<ModalFooter>
+												<Link to="/signup">
+													<Button color="primary">
+														Sign Up
+													</Button>
+												</Link>
+											</ModalFooter>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 1:</strong>
@@ -157,7 +378,42 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">2</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent2}>
+											2
+										</button>
+										<Modal
+											isOpen={this.state.modalRent2}
+											toggle={this.toggleModalRent2}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent2}>
+												Receive and Rock
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Eyy so you got your new
+														swag for the weekend?
+													</li>
+
+													<li>
+														Feel free to wear it as
+														it is, we disninfect all
+														of our items as soon as
+														we receive them so you
+														can rock it right out
+														the UPS box.
+													</li>
+													<li>
+														We have lease terms from
+														as short as two days to
+														as long as 3 weeks.
+													</li>
+												</ul>
+											</ModalBody>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 2:</strong>
@@ -173,7 +429,43 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">3</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent3}>
+											3
+										</button>
+										<Modal
+											isOpen={this.state.modalRent3}
+											toggle={this.toggleModalRent3}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent3}>
+												Receive and Rock
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Once your time is up
+														just use the same
+														shipping label that was
+														inside of the original
+														box to ship back to our
+														shipping center.
+													</li>
+
+													<li>
+														As soon as you send back
+														the item you can start
+														renting other ones.
+													</li>
+
+													<li>
+														What you waiting for?
+														Register now.
+													</li>
+												</ul>
+											</ModalBody>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 3:</strong>
@@ -191,13 +483,6 @@ export default class HowItWorks extends React.Component {
 						</div>
 					</TabPane>
 				</TabContent>
-				<Lease1
-					className="modal"
-					show={this.state.isShowing}
-					close={this.closeModalHandler}
-					body="Maybe aircrafts fly very high because they don't want to be
-					seen in plane sight?"
-				/>
 			</div>
 		);
 	}
