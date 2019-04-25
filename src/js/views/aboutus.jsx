@@ -48,8 +48,8 @@ export class About extends React.Component {
 				<p className="pt-3" style={pStyle}>
 					{" "}
 					React closet aims to bring about luxury clothing to the 21st
-					century. Created with the sole purpose of making 'looking
-					good' not a full time hustle
+					century. Created with the sole purpose of making looking
+					good not a full time hustle
 				</p>
 				<h2 style={headingStyle}> Creators</h2>
 				<Row>
