@@ -6,6 +6,7 @@ const getState = ({ getStore, setStore }) => {
 			wishList: [],
 			featuredProducts: [],
 			user: {
+				isLoggedIn: false,
 				username: "",
 				email: ""
 			},
@@ -52,12 +53,14 @@ const getState = ({ getStore, setStore }) => {
 						res.json().then(data => {
 							let store = getStore();
 
-							store.session = data;
-							store.session.isLoggedIn = true;
+							store.user = data;
+							store.user.isLoggedIn = true;
 							setStore({
 								store
 							});
 						});
+						if (res.status == 200) {
+						}
 					})
 					.catch(err => {
 						alert("Fetch error: ", err);
@@ -67,7 +70,6 @@ const getState = ({ getStore, setStore }) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/jwt-auth/v1/token";
 
-				console.log(user, pass);
 				fetch(endpoint, {
 					method: "POST",
 					headers: {

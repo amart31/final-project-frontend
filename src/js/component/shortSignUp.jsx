@@ -28,9 +28,7 @@ export default class ShortSignupForm extends React.Component {
 				}}>
 				<Context.Consumer>
 					{({ store, actions }) => {
-						if (store.session.isLoggedIn === true) {
-							return alert("Welcome " + store.session.user);
-						} else {
+						if (store.session.isLoggedIn !== true) {
 							return (
 								<div className="container">
 									<Form>
@@ -121,6 +119,8 @@ export default class ShortSignupForm extends React.Component {
 									</Form>
 								</div>
 							);
+						} else {
+							return alert("Welcome " + store.session.user);
 						}
 					}}
 				</Context.Consumer>

@@ -10,6 +10,11 @@ export default class NavBar extends React.Component {
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 			isOpen: false,
+			user: {
+				isLoggedIn: false,
+				username: "",
+				email: ""
+			},
 			session: {
 				isLoggedIn: false,
 				token: "",
@@ -65,6 +70,40 @@ export default class NavBar extends React.Component {
 														store.session
 															.user_nicename
 													}
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/cart"
+													className="mx-3">
+													<i className="fas fa-shopping-cart" />
+													<span className="badge badge-pill badge-primary">
+														{actions.cartTotalItems()}
+													</span>
+												</Link>
+											</NavItem>
+										</Nav>
+									);
+								} else if (store.user.isLoggedIn) {
+									return (
+										<Nav className="ml-auto" navbar>
+											<NavItem>
+												<Link to="/" className="mx-3">
+													Home
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/rent"
+													className="mx-3">
+													Rent
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/account"
+													className="mx-3">
+													{store.user.username}
 												</Link>
 											</NavItem>
 											<NavItem>
