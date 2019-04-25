@@ -241,7 +241,7 @@ export default class HowItWorks extends React.Component {
 											toggle={this.toggleModalLease3}
 											style={{ color: "#4a82db" }}>
 											<ModalHeader
-												toggle={this.toggleModalLease1}>
+												toggle={this.toggleModalLease3}>
 												Get your items back
 											</ModalHeader>
 											<ModalBody>
@@ -278,7 +278,7 @@ export default class HowItWorks extends React.Component {
 												</ul>
 											</ModalBody>
 											<ModalFooter>
-												<Link to="insurance">
+												<Link to="/insurance">
 													<Button color="primary">
 														Insurance policy
 													</Button>
@@ -306,7 +306,63 @@ export default class HowItWorks extends React.Component {
 							<div className="row">
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">1</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent1}>
+											1
+										</button>
+										<Modal
+											isOpen={this.state.modalRent1}
+											toggle={this.toggleModalRent1}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent1}>
+												Register and Order
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Registration takes less
+														than 5 minutes. All you
+														need is a invitation
+														code, a valid driver
+														liscence and a cc or
+														paypal account.
+													</li>
+
+													<li>
+														Once set up, look
+														through our feed and
+														find the perfect fit for
+														the weekend.
+													</li>
+													<li>
+														All of your orders are
+														insured covered by our
+														$5 insurance policy. If
+														you scratch it, dont
+														worry we got you.
+													</li>
+													<li>
+														Please remember the
+														React Closet
+														decentrilized network
+														can only function
+														through good faith. With
+														that being said, we have
+														a strict one strike and
+														youre perma ban policy.
+													</li>
+												</ul>
+											</ModalBody>
+											<ModalFooter>
+												<Link to="/signup">
+													<Button color="primary">
+														Sign Up
+													</Button>
+												</Link>
+											</ModalFooter>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 1:</strong>
@@ -322,7 +378,42 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">2</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent2}>
+											2
+										</button>
+										<Modal
+											isOpen={this.state.modalRent2}
+											toggle={this.toggleModalRent2}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent2}>
+												Receive and Rock
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Eyy so you got your new
+														swag for the weekend?
+													</li>
+
+													<li>
+														Feel free to wear it as
+														it is, we disninfect all
+														of our items as soon as
+														we receive them so you
+														can rock it right out
+														the UPS box.
+													</li>
+													<li>
+														We have lease terms from
+														as short as two days to
+														as long as 3 weeks.
+													</li>
+												</ul>
+											</ModalBody>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 2:</strong>
@@ -338,7 +429,43 @@ export default class HowItWorks extends React.Component {
 								</div>
 								<div className="col">
 									<div className="stepcard">
-										<div className="stepnumber">3</div>
+										<button
+											className="stepnumber"
+											onClick={this.toggleModalRent3}>
+											3
+										</button>
+										<Modal
+											isOpen={this.state.modalRent3}
+											toggle={this.toggleModalRent3}
+											style={{ color: "#4a82db" }}>
+											<ModalHeader
+												toggle={this.toggleModalRent3}>
+												Receive and Rock
+											</ModalHeader>
+											<ModalBody>
+												<ul>
+													<li>
+														Once your time is up
+														just use the same
+														shipping label that was
+														inside of the original
+														box to ship back to our
+														shipping center.
+													</li>
+
+													<li>
+														As soon as you send back
+														the item you can start
+														renting other ones.
+													</li>
+
+													<li>
+														What you waiting for?
+														Register now.
+													</li>
+												</ul>
+											</ModalBody>
+										</Modal>
 										<div className="stepcard-body">
 											<h5>
 												<strong>Step 3:</strong>
