@@ -12,6 +12,9 @@ export default class LoginForm extends React.Component {
 		this.user = React.createRef();
 		this.pass = React.createRef();
 	}
+	validateForm() {
+		return this.state.user.length > 0 && this.state.pass.length > 0;
+	}
 	handleChange(event) {
 		this.setState({ value: event.target.value });
 	}
@@ -84,6 +87,7 @@ export default class LoginForm extends React.Component {
 										<div className="text-center pb-2">
 											<Button
 												color="primary"
+												disabled={!this.validateForm()}
 												onClick={() => {
 													this.setState({
 														session: actions.login(
