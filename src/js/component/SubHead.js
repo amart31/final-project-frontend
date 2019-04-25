@@ -38,24 +38,28 @@ const SubHead = props => {
 					/>
 				</div>
 			</Link>
-			<div className="d-inline-block m-3">
-				<SubHeadCard
-					text="Insurance Policy"
-					style={{
-						border: "1px solid #4a82db",
-						color: "#4a82db"
-					}}
-				/>
-			</div>
-			<div className="d-inline-block m-3">
-				<SubHeadCard
-					text="Buyer Protection"
-					style={{
-						border: "1px solid #4a82db",
-						color: "#4a82db"
-					}}
-				/>
-			</div>
+			<Link to="/insurance">
+				<div className="d-inline-block m-3">
+					<SubHeadCard
+						text="Insurance Policy"
+						style={{
+							border: "1px solid #4a82db",
+							color: "#4a82db"
+						}}
+					/>
+				</div>
+			</Link>
+			<Link to="/aboutus">
+				<div className="d-inline-block m-3">
+					<SubHeadCard
+						text="About Us"
+						style={{
+							border: "1px solid #4a82db",
+							color: "#4a82db"
+						}}
+					/>
+				</div>
+			</Link>
 		</div>
 	);
 };

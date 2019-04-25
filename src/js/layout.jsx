@@ -31,7 +31,7 @@ export class Layout extends React.Component {
 							<Route path="/item/:theid" component={Item} />
 							<Route path="/login" component={Login} />
 							<Route path="/signup" component={Signup} />
-							<Route path="/about" component={About} />
+							<Route path="/aboutus" component={About} />
 							<Route path="/contact" component={Contact} />
 							<Route path="/account" component={Account} />
 							<Route path="/cart" component={Cart} />
