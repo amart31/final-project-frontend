@@ -59,8 +59,6 @@ const getState = ({ getStore, setStore }) => {
 								store
 							});
 						});
-						if (res.status == 200) {
-						}
 					})
 					.catch(err => {
 						alert("Fetch error: ", err);
