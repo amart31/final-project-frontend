@@ -34,6 +34,7 @@ const getState = ({ getStore, setStore }) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
 				const store = getStore();
+
 				fetch(endpoint, {
 					method: "POST",
 					headers: {
