@@ -1,64 +1,50 @@
-import React, { Component } from "react";
-import { Nav, NavLink } from "reactstrap";
+import React from "react";
+import { Row, Col, Button, ButtonGroup } from "reactstrap";
 import Logo from "../../img/logo1.jpg";
-import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-export class Footer extends Component {
+const boxStyle = {
+	border: "1px solid #4a82db"
+};
+
+export class Footer extends React.Component {
 	render() {
 		return (
-			<footer className="footer mt-auto py-2 text-center">
-				<div className="container-fluid">
-					<div className="row">
-						<div className="col-4 d-flex justify-content-center">
-							<img
-								src={Logo}
-								width="100"
-								height="90"
-								alt="logo"
-							/>
-						</div>
-						<div className="col-2">
-							<p>Main Menu</p>
-							<Nav vertical>
-								<NavLink href="/">Home</NavLink>
-								<NavLink href="/rent">Rent</NavLink>
-								<NavLink href="/contact">Contact</NavLink>
-								<NavLink href="/about">About Us</NavLink>
-							</Nav>
-						</div>
-						<div className="col-2">
-							<p>Contact us</p>
-							<Nav vertical>
-								<NavLink href="/">Home</NavLink>
-								<NavLink href="/rent">Rent</NavLink>
-								<NavLink href="/contact">Contact</NavLink>
-								<NavLink href="/about">About Us</NavLink>
-							</Nav>
-						</div>
-						<div className="col-2">
-							<p>About Us</p>
-							<Nav vertical>
-								<NavLink href="/">Home</NavLink>
-								<NavLink href="/rent">Rent</NavLink>
-								<NavLink href="/contact">Contact</NavLink>
-								<NavLink href="/about">About Us</NavLink>
-							</Nav>
-						</div>
-						<div className="col-2">
-							<p>Social</p>
-							<Nav vertical>
-								<NavLink href="/#">
-									<i className="fab fa-facebook-square" />
-								</NavLink>
-								<NavLink href="/#">
-									<i className="fab fa-twitter-square" />
-								</NavLink>
-								<NavLink href="/#">
-									<i className="fab fa-instagram" />
-								</NavLink>
-							</Nav>
-						</div>
-					</div>
+			<footer
+				className="footer mt-auto py-2"
+				style={{ background: "#f8f9fa" }}>
+				<img src={Logo} width="100" height="90" alt="logo" />
+
+				<div className="float-right">
+					<Link to="/">
+						<Button outline color="primary" className="mr-3">
+							Home
+						</Button>
+					</Link>
+					<Link to="/rent">
+						<Button outline color="primary" className="mr-3">
+							Rent
+						</Button>
+					</Link>
+					<Link to="/account">
+						<Button outline color="primary" className="mr-3">
+							Account
+						</Button>
+					</Link>
+					<Link to="/contact">
+						<Button outline color="primary" className="mr-3">
+							Contact
+						</Button>
+					</Link>
+					<Link to="/#">
+						<i className="fab fa-facebook-square fa-4x mr-3" />
+					</Link>
+					<Link to="/#">
+						<i className="fab fa-twitter-square fa-4x mr-3" />
+					</Link>
+					<Link to="/#">
+						<i className="fab fa-instagram fa-4x mr-3" />
+					</Link>
 				</div>
 			</footer>
 		);
