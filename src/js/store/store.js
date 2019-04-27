@@ -30,6 +30,34 @@ const getState = ({ getStore, setStore }) => {
 			// 		return authorArr[0];
 			// 	}
 			// },
+			createProduct: (brand, price, category, description, image) => {
+				const endpoint =
+					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
+				const store = getStore();
+				fetch(endpoint, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json",
+						accept: "application/json"
+					},
+					body: JSON.stringify({
+						product_brand: brand,
+						product_price: price,
+						product_category: category,
+						product_description: description,
+						product_image: image
+					})
+				})
+					.then(function(response) {
+						return response.json();
+					})
+					.then(function(post) {
+						console.log(post);
+					})
+					.catch(err => {
+						alert("Fetch error: ", err);
+					});
+			},
 			register: (user, pass, email) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/users/register";
@@ -37,7 +65,8 @@ const getState = ({ getStore, setStore }) => {
 				fetch(endpoint, {
 					method: "POST",
 					headers: {
-						"Content-Type": "application/json"
+						"Content-Type": "application/json",
+						accept: "application/json"
 					},
 					body: JSON.stringify({
 						username: user,
@@ -58,6 +87,9 @@ const getState = ({ getStore, setStore }) => {
 							setStore({
 								store
 							});
+							if (store.user.isLoggedIn) {
+								store.session.isLoggedIn = true;
+							}
 						});
 					})
 					.catch(err => {

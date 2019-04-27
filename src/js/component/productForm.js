@@ -14,19 +14,25 @@ import {
 export default class ProductForm extends React.Component {
 	constructor(props) {
 		super(props);
+
 		this.toggle = this.toggle.bind(this);
+
 		this.state = {
 			collapse: false
 		};
-		this.handleFormSubmit = this.handleFormSubmit.bind(this);
+		this.brand = React.createRef();
+		this.price = React.createRef();
+		this.category = React.createRef();
+		this.description = React.createRef();
+		this.image = React.createRef();
+	}
+	handleChange(event) {
+		this.setState({ value: event.target.value });
 	}
 	toggle() {
 		this.setState(state => ({ collapse: !state.collapse }));
 	}
-	handleFormSubmit(event) {
-		event.preventDefault();
-		console.log(this.state);
-	}
+
 	render() {
 		return (
 			<div>
@@ -42,14 +48,19 @@ export default class ProductForm extends React.Component {
 							return (
 								<Form>
 									<FormGroup row>
-										<Label for="name" sm={2}>
+										<Label for="brannd" sm={2}>
 											Brand
 										</Label>
 										<Col sm={10}>
 											<Input
 												type="text"
-												name="name"
-												id="name"
+												name="brand"
+												ref={this.brand}
+												onChange={e =>
+													this.setState({
+														user: e.target.value
+													})
+												}
 												placeholder="Product Brand"
 											/>
 										</Col>
@@ -63,7 +74,12 @@ export default class ProductForm extends React.Component {
 											<Input
 												type="number"
 												name="price"
-												id="price"
+												ref={this.price}
+												onChange={e =>
+													this.setState({
+														user: e.target.value
+													})
+												}
 												placeholder="Price"
 											/>
 										</Col>
@@ -77,7 +93,12 @@ export default class ProductForm extends React.Component {
 											<Input
 												type="select"
 												name="category"
-												id="category">
+												ref={this.category}
+												onChange={e =>
+													this.setState({
+														user: e.target.value
+													})
+												}>
 												<option>Top</option>
 												<option>Bottom</option>
 												<option>Accessory</option>
@@ -93,7 +114,12 @@ export default class ProductForm extends React.Component {
 											<Input
 												type="textarea"
 												name="description"
-												id="description"
+												ref={this.description}
+												onChange={e =>
+													this.setState({
+														user: e.target.value
+													})
+												}
 											/>
 										</Col>
 									</FormGroup>
@@ -107,13 +133,32 @@ export default class ProductForm extends React.Component {
 												type="file"
 												name="img"
 												id="itemImg"
+												ref={this.image}
+												onChange={e =>
+													this.setState({
+														user: e.target.value
+													})
+												}
 											/>
 											<FormText color="muted">
 												jpeg, png
 											</FormText>
 										</Col>
 									</FormGroup>
-									<Button>Submit</Button>
+									<Button
+										onClick={() => {
+											this.setState({
+												products: actions.createProduct(
+													this.state.brand,
+													this.state.price,
+													this.state.category,
+													this.state.description,
+													this.state.image
+												)
+											});
+										}}>
+										Submit
+									</Button>
 								</Form>
 							);
 						}}
