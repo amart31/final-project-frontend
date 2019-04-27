@@ -72,7 +72,7 @@ export default class ShortSignupForm extends React.Component {
 												name="username"
 												id="username"
 												ref={this.username}
-												placeholder=""
+												placeholder="your user name"
 												onChange={e =>
 													this.setState({
 														username: e.target.value
@@ -140,7 +140,7 @@ export default class ShortSignupForm extends React.Component {
 												id="confirmPass"
 												ref={this.confirmPass}
 												// onkeyup={this.check()}
-												placeholder="password placeholder"
+												placeholder="confirm password"
 												onChange={e =>
 													this.setState({
 														confirmPass:

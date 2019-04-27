@@ -136,14 +136,14 @@ const getState = ({ getStore, setStore }) => {
 				let i = 0;
 
 				let product = wishList.find((wishListItem, index) => {
-					if (wishList.item === item) {
+					if (wishListItem.item === item) {
 						i = index;
 						return wishListItem;
 					}
 				});
 
 				if (typeof product !== "undefined") {
-					return product;
+					return false;
 				} else {
 					wishList.push({
 						item: item

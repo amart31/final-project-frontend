@@ -18,6 +18,8 @@ import { Context } from "../store/appContext.jsx";
 import FilterProducts from "../component/filterProducts.js";
 import ProductForm from "../component/productForm.js";
 
+import { Footer } from "../component/footer.jsx";
+
 import "../../styles/rent.css";
 
 export class Rent extends React.Component {
@@ -147,6 +149,7 @@ export class Rent extends React.Component {
 						<button className="btn btn-primary">Back home</button>
 					</Link>
 				</div>
+				<Footer />
 			</Container>
 		);
 	}
