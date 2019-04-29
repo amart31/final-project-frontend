@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, FormGroup, Label, Input, Button, NavLink } from "reactstrap";
 import { Context } from "../store/appContext.jsx";
+import { Link } from "react-router-dom";
 
 export default class LoginForm extends React.Component {
 	constructor(props) {
@@ -85,19 +86,23 @@ export default class LoginForm extends React.Component {
 											/>
 										</FormGroup>
 										<div className="text-center pb-2">
-											<Button
-												color="primary"
-												disabled={!this.validateForm()}
-												onClick={() => {
-													this.setState({
-														session: actions.login(
-															this.state.user,
-															this.state.pass
-														)
-													});
-												}}>
-												Log In
-											</Button>
+											<Link to="/rent">
+												<Button
+													color="primary"
+													disabled={
+														!this.validateForm()
+													}
+													onClick={() => {
+														this.setState({
+															session: actions.login(
+																this.state.user,
+																this.state.pass
+															)
+														});
+													}}>
+													Log In
+												</Button>
+											</Link>
 										</div>
 									</Form>
 									<div>

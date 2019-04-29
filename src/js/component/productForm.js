@@ -20,6 +20,7 @@ export default class ProductForm extends React.Component {
 		this.state = {
 			collapse: false
 		};
+		this.title = React.createRef();
 		this.brand = React.createRef();
 		this.price = React.createRef();
 		this.category = React.createRef();
@@ -48,7 +49,25 @@ export default class ProductForm extends React.Component {
 							return (
 								<Form>
 									<FormGroup row>
-										<Label for="brannd" sm={2}>
+										<Label for="title" sm={2}>
+											Title
+										</Label>
+										<Col sm={10}>
+											<Input
+												type="text"
+												name="title"
+												ref={this.title}
+												onChange={e =>
+													this.setState({
+														title: e.target.value
+													})
+												}
+												placeholder="Product Brand"
+											/>
+										</Col>
+									</FormGroup>
+									<FormGroup row>
+										<Label for="brand" sm={2}>
 											Brand
 										</Label>
 										<Col sm={10}>
@@ -58,7 +77,7 @@ export default class ProductForm extends React.Component {
 												ref={this.brand}
 												onChange={e =>
 													this.setState({
-														user: e.target.value
+														brand: e.target.value
 													})
 												}
 												placeholder="Product Brand"
@@ -77,7 +96,7 @@ export default class ProductForm extends React.Component {
 												ref={this.price}
 												onChange={e =>
 													this.setState({
-														user: e.target.value
+														price: e.target.value
 													})
 												}
 												placeholder="Price"
@@ -96,7 +115,7 @@ export default class ProductForm extends React.Component {
 												ref={this.category}
 												onChange={e =>
 													this.setState({
-														user: e.target.value
+														category: e.target.value
 													})
 												}>
 												<option>Top</option>
@@ -117,7 +136,8 @@ export default class ProductForm extends React.Component {
 												ref={this.description}
 												onChange={e =>
 													this.setState({
-														user: e.target.value
+														description:
+															e.target.value
 													})
 												}
 											/>
@@ -147,15 +167,14 @@ export default class ProductForm extends React.Component {
 									</FormGroup>
 									<Button
 										onClick={() => {
-											this.setState({
-												products: actions.createProduct(
-													this.state.brand,
-													this.state.price,
-													this.state.category,
-													this.state.description,
-													this.state.image
-												)
-											});
+											actions.createProduct(
+												this.state.title,
+												this.state.brand,
+												this.state.price,
+												this.state.category,
+												this.state.description,
+												this.state.image
+											);
 										}}>
 										Submit
 									</Button>

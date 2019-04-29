@@ -30,10 +30,9 @@ const getState = ({ getStore, setStore }) => {
 			// 		return authorArr[0];
 			// 	}
 			// },
-			createProduct: (brand, price, category, description, image) => {
+			createProduct: (brand, title, price, category, description) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
-				const store = getStore();
 
 				fetch(endpoint, {
 					method: "POST",
@@ -42,19 +41,39 @@ const getState = ({ getStore, setStore }) => {
 						accept: "application/json"
 					},
 					body: JSON.stringify({
+						post_title: title,
 						product_brand: brand,
 						product_price: price,
 						product_category: category,
-						product_description: description,
-						product_image: image
+						product_description: description
 					})
 				})
 					.then(function(response) {
 						return response.json();
 					})
-					.then(function(post) {
-						console.log(post);
+					.then(res => {
+						fetch(
+							"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products"
+						)
+							.then(response => {
+								if (response.status !== 200) {
+									alert(
+										"Connection error, status " +
+											response.status
+									);
+									return;
+								}
+								response.json().then(data => {
+									const store = getStore();
+									store.products = data;
+									setStore({ store });
+								});
+							})
+							.catch(err => {
+								alert("Fetch error: ", err);
+							});
 					})
+
 					.catch(err => {
 						alert("Fetch error: ", err);
 					});
