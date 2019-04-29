@@ -130,6 +130,18 @@ const getState = ({ getStore, setStore }) => {
 						alert("Fetch error: ", err);
 					});
 			},
+			handleSignOut(e) {
+				const store = getStore();
+				e.preventDefault();
+				store.session = {
+					isLoggedIn: false,
+					username: "user",
+					password: "pass"
+				};
+				store.shoppingCart = [];
+				this.props.history.push("/login");
+				setStore({ store: store });
+			},
 
 			addToWishList: item => {
 				const store = getStore();

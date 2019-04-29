@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
+import PropTypes from "prop-types";
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from "reactstrap";
 
 export default class NavBar extends React.Component {
@@ -62,6 +63,7 @@ export default class NavBar extends React.Component {
 													Rent
 												</Link>
 											</NavItem>
+
 											<NavItem>
 												<Link
 													to="/account"
@@ -70,6 +72,18 @@ export default class NavBar extends React.Component {
 														store.session
 															.user_nicename
 													}
+												</Link>
+											</NavItem>
+											<NavItem>
+												<Link
+													to="/"
+													onClick={e => {
+														actions.handleSignOut();
+													}}
+													className="header-item"
+													activeClassName="active">
+													Log Out{" "}
+													<i className="fas fa-sign-in-alt" />
 												</Link>
 											</NavItem>
 											<NavItem>
@@ -94,10 +108,9 @@ export default class NavBar extends React.Component {
 											</NavItem>
 											<NavItem>
 												<Link
-													to="/login"
-													className="mx-3"
-													id="login">
-													Login
+													to="/rent"
+													className="mx-3">
+													Rent
 												</Link>
 											</NavItem>
 											<NavItem>
@@ -109,9 +122,11 @@ export default class NavBar extends React.Component {
 											</NavItem>
 											<NavItem>
 												<Link
-													to="/rent"
-													className="mx-3">
-													Rent
+													to="/login"
+													className="header-item"
+													activeClassName="active">
+													Login{" "}
+													<i className="fas fa-sign-in-alt" />
 												</Link>
 											</NavItem>
 											<NavItem>
@@ -135,3 +150,7 @@ export default class NavBar extends React.Component {
 		);
 	}
 }
+
+NavBar.propTypes = {
+	history: PropTypes.object
+};
