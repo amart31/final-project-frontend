@@ -7,19 +7,19 @@ export default class ShortSignupForm extends React.Component {
 		super(props);
 
 		this.state = {
-			username: "",
+			user: "",
 			email: "",
 			pass: "",
 			confirmPass: ""
 		};
-		this.username = React.createRef();
+		this.user = React.createRef();
 		this.email = React.createRef();
 		this.pass = React.createRef();
 		this.confirmPass = React.createRef();
 	}
 	validateForm() {
 		return (
-			this.state.username.length > 0 &&
+			this.state.user.length > 0 &&
 			this.state.pass.length > 0 &&
 			this.state.pass == this.state.confirmPass
 		);
@@ -60,7 +60,7 @@ export default class ShortSignupForm extends React.Component {
 									<h2 className="mt-5 pt-3">Sign Up</h2>
 									<Form>
 										<FormGroup>
-											<Label htmlFor="username">
+											<Label htmlFor="user">
 												Username:
 											</Label>
 											<Input
@@ -69,13 +69,13 @@ export default class ShortSignupForm extends React.Component {
 													margin: "0 auto"
 												}}
 												type="text"
-												name="username"
-												id="username"
-												ref={this.username}
+												name="user"
+												id="user"
+												ref={this.user}
 												placeholder="your user name"
 												onChange={e =>
 													this.setState({
-														username: e.target.value
+														user: e.target.value
 													})
 												}
 											/>
@@ -148,7 +148,6 @@ export default class ShortSignupForm extends React.Component {
 													})
 												}
 											/>
-											<span id="message" />
 										</FormGroup>
 
 										<div className="text-center pb-2">

@@ -89,6 +89,9 @@ const getState = ({ getStore, setStore }) => {
 								store
 							});
 							if (store.user.isLoggedIn) {
+								store.session.user_email = store.user.email;
+								store.session.user_nicename =
+									store.user.username;
 								store.session.isLoggedIn = true;
 							}
 						});

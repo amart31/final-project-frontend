@@ -53,7 +53,11 @@ export class Cart extends React.Component {
 													/>
 												</Col>
 												<Col>
-													<Link to="/rent">
+													<Link
+														to={
+															"/item/" +
+															item.item.ID
+														}>
 														<h4 className="product-name">
 															{
 																item.item
