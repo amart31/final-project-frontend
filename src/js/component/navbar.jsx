@@ -81,7 +81,9 @@ export default class NavBar extends React.Component {
 														actions.handleSignOut();
 													}}
 													className="header-item">
-													LogOut{" "}
+
+													Log Out{" "}
+
 													<i className="fas fa-sign-in-alt" />
 												</Link>
 											</NavItem>
