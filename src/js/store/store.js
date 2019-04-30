@@ -33,26 +33,40 @@ const getState = ({ getStore, setStore }) => {
 				description,
 				image
 			) => {
+				const store = getStore();
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
 
-				postFile(
+				var formData = new FormData();
+				var fileField = document.querySelector("input[type='file']");
+				formData.append(image, fileField.files[0]);
+
+				fetch(
 					"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
-					image
-				)
-					.then(data => console.log(data))
-					.catch(error => console.log(error));
+					{
+						method: "POST",
+						headers: new Headers({
+							"Content-Type": "image/jpeg"
+						}),
+						body: formData
+					}
+				).then(function(response) {
+					console.log(response);
+				});
 
-				function postFile(url, image) {
-					const formData = new FormData();
-					const fileField = document.querySelector("#image");
-					formData.append("image", fileField.files[0]);
-
-					return fetch(url, {
-						method: "POST", // 'GET', 'PUT', 'DELETE', etc.
-						body: formData // Coordinate the body type with 'Content-Type'
-					}).then(response => response.json());
-				}
+				// fetch(
+				// 	"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
+				// 	{
+				// 		method: "POST",
+				// 		credentials: "include",
+				// 		body: formData
+				// 	}
+				// )
+				// 	.then(response => response.json())
+				// 	.catch(error => console.log("Error: ", error))
+				// 	.then(response =>
+				// 		console.log("Success: ", JSON.stringify(response))
+				// 	);
 
 				fetch(endpoint, {
 					method: "POST",
