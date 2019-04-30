@@ -23,15 +23,14 @@ const Insurance = () => {
 				<hr className="my-2" />
 				<h2>Refund Policy</h2>
 				<p>
-					When you make a purchase on React Cloet, we don't release
-					payment to the leaser until you tell us you've received your
+					When you make a purchase on React Cloet, we dont release
+					payment to the leaser until you tell us youve received your
 					order as described. You have 3 days after delivery to inform
 					us if the item has been misrepresented by reporting the
 					problem to our support with supporting photos. If we verify
-					your claim, we'll send you a label to return the order to
-					the seller and refund your payment. All returns must be
-					shipped back within 5 days of approval to be eligible for a
-					refund.
+					your claim, well send you a label to return the order to the
+					seller and refund your payment. All returns must be shipped
+					back within 5 days of approval to be eligible for a refund.
 				</p>
 				<hr className="my-2" />
 				<h2>What is covered</h2>

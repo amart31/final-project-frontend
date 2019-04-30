@@ -31,7 +31,7 @@ export class Layout extends React.Component {
 							<Route exact path="/" component={Home} />
 							<Route path="/rent" component={Rent} />
 							<Route
-								path="/categories"
+								path="/categories/:category"
 								component={RentByCategory}
 							/>
 							<Route path="/item/:theid" component={Item} />

@@ -17,8 +17,8 @@ import { Context } from "../store/appContext.jsx";
 
 import FilterProducts from "../component/filterProducts.js";
 import ProductForm from "../component/productForm.js";
-import RentByCategoryNav from "../component/rentByCategoryNav.js";
 
+import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
 
 import "../../styles/rent.css";
@@ -63,9 +63,6 @@ export class Rent extends React.Component {
 						<h1 className="display-3">Products</h1>
 					</Container>
 				</Jumbotron>
-
-				<RentByCategoryNav />
-
 				<Context.Consumer>
 					{({ store, actions }) => {
 						return (
@@ -75,6 +72,8 @@ export class Rent extends React.Component {
 									inStockOnly={this.state.inStockOnly}
 									onFilter={this.handleFilter}
 								/>
+
+								<RentByCategoryNav />
 
 								<ProductForm onSave={this.saveProduct} />
 							</div>

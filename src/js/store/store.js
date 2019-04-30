@@ -2,9 +2,15 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			products: [],
+
+			categories: [],
+
 			shoppingCart: [],
+
 			wishList: [],
+
 			featuredProducts: [],
+
 			user: {
 				isLoggedIn: false,
 				username: "",
@@ -19,20 +25,34 @@ const getState = ({ getStore, setStore }) => {
 			}
 		},
 		actions: {
-			// getAuthorName: (author, index) => {
-			// 	const store = getStore();
-
-			// 	let authorArr = store.products.filter(author => {
-			// 		if (author == author.post_author) return author.post_author;
-			// 	});
-
-			// 	if (authorArr !== []) {
-			// 		return authorArr[0];
-			// 	}
-			// },
-			createProduct: (brand, title, price, category, description) => {
+			createProduct: (
+				brand,
+				title,
+				price,
+				category,
+				description,
+				image
+			) => {
 				const endpoint =
 					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
+
+				postFile(
+					"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
+					image
+				)
+					.then(data => console.log(data))
+					.catch(error => console.log(error));
+
+				function postFile(url, image) {
+					const formData = new FormData();
+					const fileField = document.querySelector("#image");
+					formData.append("image", fileField.files[0]);
+
+					return fetch(url, {
+						method: "POST", // 'GET', 'PUT', 'DELETE', etc.
+						body: formData // Coordinate the body type with 'Content-Type'
+					}).then(response => response.json());
+				}
 
 				fetch(endpoint, {
 					method: "POST",
@@ -44,7 +64,7 @@ const getState = ({ getStore, setStore }) => {
 						post_title: title,
 						product_brand: brand,
 						product_price: price,
-						product_category: category,
+						category: category,
 						product_description: description
 					})
 				})

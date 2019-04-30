@@ -120,6 +120,7 @@ export default class ProductForm extends React.Component {
 												}>
 												<option>Top</option>
 												<option>Bottom</option>
+												<option>Shoes</option>
 												<option>Accessory</option>
 											</Input>
 										</Col>
@@ -145,18 +146,18 @@ export default class ProductForm extends React.Component {
 									</FormGroup>
 
 									<FormGroup row>
-										<Label for="itemImg" sm={2}>
+										<Label for="image" sm={2}>
 											File
 										</Label>
 										<Col sm={10}>
 											<Input
 												type="file"
-												name="img"
-												id="itemImg"
+												name="image"
+												id="image"
 												ref={this.image}
 												onChange={e =>
 													this.setState({
-														user: e.target.value
+														image: e.target.value
 													})
 												}
 											/>
