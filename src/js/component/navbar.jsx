@@ -80,8 +80,7 @@ export default class NavBar extends React.Component {
 													onClick={e => {
 														actions.handleSignOut();
 													}}
-													className="header-item"
-													activeClassName="active">
+													className="header-item">
 													Log Out{" "}
 													<i className="fas fa-sign-in-alt" />
 												</Link>
@@ -123,8 +122,7 @@ export default class NavBar extends React.Component {
 											<NavItem>
 												<Link
 													to="/login"
-													className="header-item"
-													activeClassName="active">
+													className="header-item">
 													Login{" "}
 													<i className="fas fa-sign-in-alt" />
 												</Link>

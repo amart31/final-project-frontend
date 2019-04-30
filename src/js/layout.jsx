@@ -12,6 +12,7 @@ import { Contact } from "./views/contactus.jsx";
 import { Account } from "./views/account.jsx";
 import { Cart } from "./views/cart.jsx";
 import FAQs from "./views/faqs";
+import Insurance from "./views/Insurance";
 
 import Store from "./store/appContext.jsx";
 
@@ -36,6 +37,7 @@ export class Layout extends React.Component {
 							<Route path="/account" component={Account} />
 							<Route path="/cart" component={Cart} />
 							<Route path="/faqs" component={FAQs} />
+							<Route path="/insurance" component={Insurance} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
 					</ScrollToTop>
