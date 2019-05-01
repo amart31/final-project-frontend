@@ -1,25 +1,25 @@
 import React from "react";
-import {
-	Card,
-	CardImg,
-	CardText,
-	CardBody,
-	CardTitle,
-	CardSubtitle,
-	Button
-} from "reactstrap";
 
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";
 
+import RentByCategoryNav from "../component/rentByCategoryNav.js";
+
 export class RentByCategory extends React.Component {
 	render() {
 		return (
-			<div className="container">
-				<h2 className="brand-head p-2 text-center">Products</h2>
-				<div className="row product-list">
+			<div className="container-fluid">
+				<div className="jumbotron jumbotron-fluid text-primary">
+					<div className="container-full-bg">
+						<h1 className="display-4">Products by Category</h1>
+					</div>
+				</div>
+				<div className="row">
+					<div className="col align-self-start">
+						<RentByCategoryNav />
+					</div>
 					<Context.Consumer>
 						{({ store, actions }) => {
 							let product = store.products.filter(
@@ -36,57 +36,66 @@ export class RentByCategory extends React.Component {
 							return product.map((item, index) => {
 								return (
 									<div
-										className="col-md-6 col-lg-4 pb-2"
+										className="col-md-3 align-self-center pb-2"
 										key={item.ID}>
-										<Card>
-											<CardImg
-												className="card-img-top"
-												top
-												width="100%"
-												src={item.image}
-												alt="Card image cap"
-											/>
-											<CardBody>
+										<div className="product-card">
+											<div className="product-image">
 												<Link to={"/item/" + item.ID}>
-													<CardTitle>
-														{item.post_title}
-													</CardTitle>
+													<img
+														className="pic-1"
+														src={item.image}
+													/>
+													<img
+														className="pic-2"
+														src={item.image}
+													/>
 												</Link>
-												<CardSubtitle>
-													&#36;
+												<ul className="social">
+													<li>
+														<a
+															onClick={() => {
+																actions.addToWishList(
+																	item
+																);
+															}}>
+															<i className="fa fa-shopping-bag" />
+														</a>
+													</li>
+													<li>
+														<a
+															onClick={() => {
+																actions.addToCart(
+																	item
+																);
+															}}>
+															<i className="fa fa-shopping-cart" />
+														</a>
+													</li>
+												</ul>
+												<span className="product-new-label">
+													New
+												</span>
+											</div>
+											<div className="product-content">
+												<h3 className="title">
+													<a>{item.post_title}</a>
+												</h3>
+												<div className="price">
 													{
 														item.meta_keys
 															.product_price
 													}
-												</CardSubtitle>
-												<CardText>
-													{
-														item.meta_keys
-															.product_brand
-													}
-												</CardText>
-												<div className="d-flex justify-content-between">
-													<Button
-														color="success"
-														onClick={() => {
-															actions.addToCart(
-																item
-															);
-														}}>
-														Add to Cart
-													</Button>
-													<Button
-														color="danger"
-														onClick={() => {
-															actions.addToWishList(
-																item
-															);
-														}}>
-														<i className="far fa-heart" />
-													</Button>
+													<span>$75.00</span>
 												</div>
-											</CardBody>
-										</Card>
+												<ul className="rating">
+													<li className="fa fa-star" />
+													<li className="fa fa-star" />
+													<li className="fa fa-star" />
+													<li className="fa fa-star disable" />
+													<li className="fa fa-star disable" />
+												</ul>
+											</div>
+										</div>
 									</div>
 								);
 							});

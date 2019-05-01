@@ -1,16 +1,4 @@
 import React from "react";
-
-import {
-	Card,
-	CardImg,
-	CardText,
-	CardBody,
-	CardTitle,
-	Row,
-	CardSubtitle,
-	Button
-} from "reactstrap";
-
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
 
@@ -27,38 +15,51 @@ export default class SavedItemCard extends React.Component {
 				{({ store, actions }) => {
 					return store.wishList.map((item, index) => {
 						return (
-							<Card key={index}>
-								<CardImg
-									className="card-img-top"
-									top
-									width="100%"
-									src={item.item.image}
-									alt="Card image cap"
-								/>
-								<CardBody>
-									<Link to={"/item/" + item.item.ID}>
-										<CardTitle>
-											{item.item.post_title}
-										</CardTitle>
-									</Link>
-									<CardText>
-										{
-											item.item.meta_keys
-												.product_description
-										}
-									</CardText>
-									<Button
-										onClick={() => {
-											this.setState({
-												shoppingCart: actions.addToCart(
-													item.item
-												)
-											});
-										}}>
-										Add to Cart
-									</Button>
-								</CardBody>
-							</Card>
+							<div className="col" key={index}>
+								<div className="product-card">
+									<div className="product-image">
+										<Link to={"/item/" + item.ID}>
+											<img
+												className="pic-1"
+												src={item.item.image}
+											/>
+											<img
+												className="pic-2"
+												src={item.item.image}
+											/>
+										</Link>
+										<ul className="social">
+											<li>
+												<a
+													onClick={() => {
+														actions.addToCart(item);
+													}}>
+													<i className="fa fa-shopping-cart" />
+												</a>
+											</li>
+										</ul>
+										<span className="product-new-label">
+											New
+										</span>
+									</div>
+									<div className="product-content">
+										<h3 className="title">
+											<a>{item.item.post_title}</a>
+										</h3>
+										<div className="price">
+											{item.item.meta_keys.product_price}
+											<span>$75.00</span>
+										</div>
+										<ul className="rating">
+											<li className="fa fa-star" />
+											<li className="fa fa-star" />
+											<li className="fa fa-star" />
+											<li className="fa fa-star disable" />
+											<li className="fa fa-star disable" />
+										</ul>
+									</div>
+								</div>
+							</div>
 						);
 					});
 				}}
