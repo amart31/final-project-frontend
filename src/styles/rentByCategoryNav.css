@@ -2,11 +2,11 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 175px;
   background-color: #f1f1f1;
-  position: fixed;
-  height: 100%;
-  overflow: auto;
+  position: absolute;
+  top: 55px;
+  bottom: 0;
 }
 
 /* Sidebar links */

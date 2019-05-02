@@ -38,36 +38,25 @@ const getState = ({ getStore, setStore }) => {
 					"https://wordpress-project-amart31.c9users.io/wp-json/sample_api/v1/products";
 
 				var formData = new FormData();
-				var fileField = document.querySelector("input[type='file']");
-				formData.append(image, fileField.files[0]);
+				formData.append("image", image);
 
 				fetch(
 					"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
 					{
 						method: "POST",
-						headers: new Headers({
-							"Content-Type": "image/jpeg"
-						}),
+						credentials: "omit",
+						headers: {
+							Authorization: "Bearer " + store.session.token
+						},
 						body: formData
 					}
-				).then(function(response) {
-					console.log(response);
-				});
-
-				// fetch(
-				// 	"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
-				// 	{
-				// 		method: "POST",
-				// 		credentials: "include",
-				// 		body: formData
-				// 	}
-				// )
-				// 	.then(response => response.json())
-				// 	.catch(error => console.log("Error: ", error))
-				// 	.then(response =>
-				// 		console.log("Success: ", JSON.stringify(response))
-				// 	);
-
+				)
+					.then(function(response) {
+						console.log(response);
+					})
+					.catch(err => {
+						alert("Fetch error: ", err);
+					});
 				fetch(endpoint, {
 					method: "POST",
 					headers: {
@@ -207,7 +196,7 @@ const getState = ({ getStore, setStore }) => {
 				let product = wishList.find((wishListItem, index) => {
 					if (wishListItem.item === item) {
 						i = index;
-						return wishListItem;
+						return wishListItem.item;
 					}
 				});
 

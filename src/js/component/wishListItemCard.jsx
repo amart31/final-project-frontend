@@ -16,47 +16,45 @@ export default class SavedItemCard extends React.Component {
 					return store.wishList.map((item, index) => {
 						return (
 							<div className="col" key={index}>
-								<div className="product-card">
-									<div className="product-image">
-										<Link to={"/item/" + item.ID}>
-											<img
-												className="pic-1"
-												src={item.item.image}
-											/>
-											<img
-												className="pic-2"
-												src={item.item.image}
-											/>
-										</Link>
-										<ul className="social">
-											<li>
-												<a
-													onClick={() => {
-														actions.addToCart(item);
-													}}>
-													<i className="fa fa-shopping-cart" />
-												</a>
-											</li>
-										</ul>
-										<span className="product-new-label">
-											New
+								<div
+									className="card rounded m-3"
+									key={item.item.ID}>
+									<div className="card-image">
+										<span
+											className="card-notify-addToCart"
+											onClick={() => {
+												actions.addToCart(item.item);
+											}}>
+											<i className="fa fa-shopping-cart" />
+										</span>
+										<img
+											className="card-img-top"
+											src={item.item.image}
+											alt="for rent"
+										/>
+									</div>
+									<div className="card-image-overlay m-auto">
+										<span className="card-detail-badge">
+											{item.item.meta_keys.category}
+										</span>
+										<span className="card-detail-badge">
+											{item.item.meta_keys.product_brand}
+										</span>
+										<span className="card-detail-badge">
+											{"$ " +
+												item.item.meta_keys
+													.product_price}
 										</span>
 									</div>
-									<div className="product-content">
-										<h3 className="title">
-											<a>{item.item.post_title}</a>
-										</h3>
-										<div className="price">
-											{item.item.meta_keys.product_price}
-											<span>$75.00</span>
+									<div className="card-body text-center">
+										<div className="ad-title m-auto">
+											<h5>{item.item.post_title}</h5>
 										</div>
-										<ul className="rating">
-											<li className="fa fa-star" />
-											<li className="fa fa-star" />
-											<li className="fa fa-star" />
-											<li className="fa fa-star disable" />
-											<li className="fa fa-star disable" />
-										</ul>
+										<Link to={"/item/" + item.item.ID}>
+											<button className="ad-btn">
+												View
+											</button>
+										</Link>
 									</div>
 								</div>
 							</div>

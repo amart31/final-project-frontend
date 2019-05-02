@@ -18,7 +18,8 @@ export default class ProductForm extends React.Component {
 		this.toggle = this.toggle.bind(this);
 
 		this.state = {
-			collapse: false
+			collapse: false,
+			image: ""
 		};
 		this.title = React.createRef();
 		this.brand = React.createRef();
@@ -27,9 +28,7 @@ export default class ProductForm extends React.Component {
 		this.description = React.createRef();
 		this.image = React.createRef();
 	}
-	handleChange(event) {
-		this.setState({ value: event.target.value });
-	}
+
 	toggle() {
 		this.setState(state => ({ collapse: !state.collapse }));
 	}
@@ -118,10 +117,10 @@ export default class ProductForm extends React.Component {
 														category: e.target.value
 													})
 												}>
-												<option>Top</option>
-												<option>Bottom</option>
+												<option>Tops</option>
+												<option>Pants</option>
 												<option>Shoes</option>
-												<option>Accessory</option>
+												<option>Accessories</option>
 											</Input>
 										</Col>
 									</FormGroup>
@@ -157,7 +156,7 @@ export default class ProductForm extends React.Component {
 												ref={this.image}
 												onChange={e =>
 													this.setState({
-														image: e.target.value
+														image: e.target.files[0]
 													})
 												}
 											/>

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 import { Link } from "react-router-dom";
 import SimilarList from "../component/similarList.js";
+import "../../styles/singleProduct.css";
 
 export class Item extends React.Component {
 	render() {
@@ -73,7 +74,7 @@ export class Item extends React.Component {
 											<p className="new-product">NEW</p>
 											<h2>{product[0].post_title}</h2>
 											<hr />
-											<div className="product-rating">
+											<div className="product-rating text-warning">
 												<i className="fa fa-star gold" />{" "}
 												<i className="fa fa-star gold" />{" "}
 												<i className="fa fa-star gold" />{" "}
@@ -99,7 +100,7 @@ export class Item extends React.Component {
 											<hr />
 											<p>{product[0].post_author}</p>
 											<hr />
-											<div className="btn-group cart">
+											<div>
 												<button
 													onClick={() => {
 														actions.addToCart(
@@ -107,8 +108,11 @@ export class Item extends React.Component {
 														);
 													}}
 													type="button"
-													className="btn btn-success mt-5">
-													Add to cart
+													className="btn m-2"
+													data-toggle="tooltip"
+													data-placement="bottom"
+													title="Add to Cart">
+													<i className="fa fa-shopping-cart" />
 												</button>
 												<button
 													onClick={() => {
@@ -117,8 +121,11 @@ export class Item extends React.Component {
 														);
 													}}
 													type="button"
-													className="btn btn-danger mt-5">
-													Add to Wishlist
+													className="btn m-2"
+													data-toggle="tooltip"
+													data-placement="bottom"
+													title="Save for Later">
+													<i className="fa fa-shopping-bag" />
 												</button>
 											</div>
 										</div>

@@ -5,100 +5,90 @@ import { Context } from "../store/appContext.jsx";
 
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
-
+import ProductForm from "../component/productForm.js";
 import "../../styles/rent.css";
 
 export class Rent extends React.Component {
 	render() {
 		return (
-			<div className="container-fluid">
+			<React.Fragment>
+				<RentByCategoryNav />
+
 				<div className="jumbotron jumbotron-fluid text-primary">
 					<div className="container-full-bg">
 						<h1 className="display-4">Products</h1>
 					</div>
 				</div>
+
+				<ProductForm />
 				<div className="row">
-					<div className="col align-self-start">
-						<RentByCategoryNav />
-					</div>
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return store.products.map((item, index) => {
-								return (
-									<div
-										className="col col-md-3 align-self-center content"
-										key={item.ID}>
-										<div className="product-card">
-											<div className="product-image">
-												<Link to={"/item/" + item.ID}>
-													<img
-														className="pic-1"
-														src={item.image}
-													/>
-													<img
-														className="pic-2"
-														src={item.image}
-													/>
-												</Link>
-												<ul className="social">
-													<li>
-														<a
-															onClick={() => {
-																actions.addToWishList(
-																	item
-																);
-															}}>
-															<i className="fa fa-shopping-bag" />
-														</a>
-													</li>
-													<li>
-														<a
-															onClick={() => {
-																actions.addToCart(
-																	item
-																);
-															}}>
-															<i className="fa fa-shopping-cart" />
-														</a>
-													</li>
-												</ul>
-												<span className="product-new-label">
-													New
+					<div className="col-md-4">
+						<Context.Consumer>
+							{({ store, actions }) => {
+								return store.products.map((item, index) => {
+									return (
+										<div
+											className="card rounded m-3 productCard"
+											key={index}>
+											<div className="card-image">
+												<span
+													className="card-notify-wishList"
+													onClick={() => {
+														actions.addToWishList(
+															item
+														);
+													}}>
+													<i className="fa fa-shopping-bag" />
 												</span>
+												<span
+													className="card-notify-addToCart"
+													onClick={() => {
+														actions.addToCart(item);
+													}}>
+													<i className="fa fa-shopping-cart" />
+												</span>
+												<img
+													className="card-img-top"
+													src={item.image}
+													alt="for rent"
+												/>
 											</div>
-											<div className="product-content">
-												<h3 className="title">
-													<a>{item.post_title}</a>
-												</h3>
-												<div className="price">
+											<div className="card-image-overlay m-auto">
+												<span className="card-detail-badge">
+													{item.meta_keys.category}
+												</span>
+												<span className="card-detail-badge">
 													{
 														item.meta_keys
-															.product_price
+															.product_brand
 													}
-													<span>$75.00</span>
+												</span>
+												<span className="card-detail-badge">
+													{"$ " +
+														item.meta_keys
+															.product_price}
+												</span>
+											</div>
+											<div className="card-body text-center">
+												<div className="ad-title m-auto">
+													<h5>{item.post_title}</h5>
 												</div>
-												<ul className="rating">
-													<li className="fa fa-star" />
-													<li className="fa fa-star" />
-													<li className="fa fa-star" />
-													<li className="fa fa-star disable" />
-													<li className="fa fa-star disable" />
-												</ul>
+												<Link to={"/item/" + item.ID}>
+													<button className="ad-btn">
+														View
+													</button>
+												</Link>
 											</div>
 										</div>
-									</div>
-								);
-							});
-						}}
-					</Context.Consumer>
-
-					<br />
-					<Link to="/">
-						<button className="btn btn-primary">Back home</button>
-					</Link>
+									);
+								});
+							}}
+						</Context.Consumer>
+					</div>
 				</div>
+
 				<Footer />
-			</div>
+			</React.Fragment>
 		);
 	}
 }
