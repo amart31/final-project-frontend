@@ -162,6 +162,7 @@ export default class ProductForm extends React.Component {
 											<Col sm={10}>
 												<Input
 													type="file"
+													enctype="multipart/form-data"
 													name="image"
 													id="image"
 													ref={this.image}

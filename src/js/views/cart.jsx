@@ -160,7 +160,10 @@ export class Cart extends React.Component {
 					</CardBody>
 
 					<CardFooter>
-						<div className="pull-right" style={{ margin: "10px" }}>
+						<div
+							className="pull-right"
+							id="paypal"
+							style={{ margin: "10px" }}>
 							<a href="" className="btn btn-success pull-right">
 								Checkout
 							</a>

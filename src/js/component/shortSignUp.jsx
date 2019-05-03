@@ -24,6 +24,9 @@ export default class ShortSignupForm extends React.Component {
 			this.state.pass == this.state.confirmPass
 		);
 	}
+	handleSubmit() {
+		alert("Welcome: " + this.user);
+	}
 
 	// check() {
 	// 	if (this.pass == this.confirmPass) {
@@ -156,15 +159,12 @@ export default class ShortSignupForm extends React.Component {
 												color="primary"
 												disabled={!this.validateForm()}
 												onClick={() => {
-													this.setState({
-														users: actions.register(
-															this.state.user,
-															this.state.pass,
-															this.state.email,
-															this.state
-																.confirmPass
-														)
-													});
+													actions.register(
+														this.state.user,
+														this.state.pass,
+														this.state.email,
+														this.state.confirmPass
+													);
 												}}>
 												Sign Up
 											</Button>

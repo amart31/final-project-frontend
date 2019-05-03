@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 
 import { Row } from "reactstrap";
-
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
 import ProductForm from "../component/productForm.js";
@@ -15,8 +14,12 @@ export class Rent extends React.Component {
 		return (
 			<React.Fragment>
 				<RentByCategoryNav />
-				<ProductForm />
-				<Row style={{ marginLeft: "200px", marginRight: "0" }}>
+				<div className="container">
+					<ProductForm />
+				</div>
+				<div
+					className="row"
+					style={{ marginLeft: "200px", marginRight: "0" }}>
 					<Context.Consumer>
 						{({ store, actions }) => {
 							return store.products.map((item, index) => {
@@ -73,7 +76,7 @@ export class Rent extends React.Component {
 							});
 						}}
 					</Context.Consumer>
-				</Row>
+				</div>
 
 				<Footer />
 			</React.Fragment>

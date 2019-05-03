@@ -11,16 +11,8 @@ export default class NavBar extends React.Component {
 		this.toggle = this.toggle.bind(this);
 		this.state = {
 			isOpen: false,
-			user: {
-				isLoggedIn: false,
-				username: "",
-				email: ""
-			},
 			session: {
 				isLoggedIn: false,
-				token: "",
-				user_display_name: "",
-				user_email: "",
 				user_nicename: ""
 			}
 		};

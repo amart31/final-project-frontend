@@ -11,17 +11,11 @@ const getState = ({ getStore, setStore }) => {
 
 			featuredProducts: [],
 
-			user: {
-				isLoggedIn: false,
-				username: "",
-				email: ""
-			},
 			session: {
 				isLoggedIn: false,
-				token: "",
-				user_display_name: "",
-				user_email: "",
-				user_nicename: ""
+				username: "user",
+				password: "pass",
+				token: ""
 			}
 		},
 		actions: {
@@ -44,8 +38,9 @@ const getState = ({ getStore, setStore }) => {
 					"https://wordpress-project-amart31.c9users.io/wp-json/wp/v2/media",
 					{
 						method: "POST",
-						credentials: "omit",
+						credentials: "include",
 						headers: {
+							"Content-Type": formData,
 							Authorization: "Bearer " + store.session.token
 						},
 						body: formData
@@ -108,8 +103,7 @@ const getState = ({ getStore, setStore }) => {
 				fetch(endpoint, {
 					method: "POST",
 					headers: {
-						"Content-Type": "application/json",
-						accept: "application/json"
+						"Content-Type": "application/json"
 					},
 					body: JSON.stringify({
 						username: user,
@@ -119,23 +113,14 @@ const getState = ({ getStore, setStore }) => {
 				})
 					.then(res => {
 						if (res.status !== 200) {
-							console.log("error" + res.status);
+							console.log("error " + res.status);
 							return;
 						}
 						res.json().then(data => {
 							let store = getStore();
-
-							store.user = data;
-							store.user.isLoggedIn = true;
 							setStore({
 								store
 							});
-							if (store.user.isLoggedIn) {
-								store.session.user_email = store.user.email;
-								store.session.user_nicename =
-									store.user.username;
-								store.session.isLoggedIn = true;
-							}
 						});
 					})
 					.catch(err => {
@@ -181,7 +166,8 @@ const getState = ({ getStore, setStore }) => {
 				store.session = {
 					isLoggedIn: false,
 					username: "user",
-					password: "pass"
+					password: "pass",
+					token: ""
 				};
 				store.shoppingCart = [];
 				this.props.history.push("/login");

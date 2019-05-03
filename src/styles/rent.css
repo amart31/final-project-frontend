@@ -5,6 +5,10 @@
 background-size: cover;
 height: 400px;}
 
+.collapse .container {
+    width: 50%;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 
@@ -125,6 +129,7 @@ body {
         text-transform: uppercase;
         font-size: 18px;
     }
+    
 
 /*@media only screen and (max-width:990px){.product-card{margin-bottom:30px}*/
 /*.product-grid3 .rating{margin:-22px 0 0}*/
