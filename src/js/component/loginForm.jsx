@@ -25,7 +25,8 @@ export default class LoginForm extends React.Component {
 			<div
 				style={{
 					background: "#a9b6cc",
-					height: "-webkit-fill-available"
+					height: "-webkit-fill-available",
+					padding: "90px"
 				}}>
 				<Context.Consumer>
 					{({ store, actions }) => {
@@ -42,7 +43,7 @@ export default class LoginForm extends React.Component {
 										color: "#4a82db",
 										background: "white"
 									}}>
-									<h2 className="mt-5 pt-3">Log In</h2>
+									<h2 className="mt-4 pt-3">Log In</h2>
 									<Form onSubmit={actions.handleFormSubmit}>
 										<FormGroup>
 											<Label htmlFor="username">

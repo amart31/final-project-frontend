@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext.jsx";
 import PropTypes from "prop-types";
-import "../../styles/demo.css";
 
 import {
 	Card,

@@ -42,7 +42,8 @@ export default class ShortSignupForm extends React.Component {
 			<div
 				style={{
 					background: "#a9b6cc",
-					height: "-webkit-fill-available"
+					height: "-webkit-fill-available",
+					padding: "90px"
 				}}>
 				<Context.Consumer>
 					{({ store, actions }) => {
@@ -57,7 +58,7 @@ export default class ShortSignupForm extends React.Component {
 										color: "#4a82db",
 										background: "white"
 									}}>
-									<h2 className="mt-5 pt-3">Sign Up</h2>
+									<h2 className="mt-4 pt-3">Sign Up</h2>
 									<Form>
 										<FormGroup>
 											<Label htmlFor="user">

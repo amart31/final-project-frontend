@@ -22,10 +22,16 @@
 .switcher{
     margin-left: auto;
     margin-right: auto;
-    width: 335px;
+    width: 353px;
+    
 }
 
 .nav-tabs .nav-link.active, 
 .nav-tabs .nav-item.show .nav-link{
     border: none;
+}
+
+.nav {
+    
+    display: -webkit-box;
 }

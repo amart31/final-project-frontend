@@ -9,17 +9,10 @@ const FeaturedProducts = props => {
 	return (
 		<div>
 			<Link to={props.link}>
-				<div className="img-card">
-					<img
-						src={props.source}
-						alt="Product image"
-						style={{
-							maxWidth: "100%",
-							maxHeight: "100%",
-							backgroundSize: "cover"
-						}}
-					/>
-				</div>
+				<div
+					className="img-card"
+					style={{ backgroundImage: `url(${props.source})` }}
+				/>
 				<div className="centered-text">{props.title}</div>
 			</Link>
 		</div>

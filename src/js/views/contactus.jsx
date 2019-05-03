@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "reactstrap";
 import ContactUsTop from "../component/functional/ContactUsTop";
+import { Footer } from "../component/footer.jsx";
 
 import "../../styles/contact.css";
 
@@ -73,13 +74,15 @@ export class Contact extends React.Component {
 								}
 							/>
 							<Button
-								color="success"
-								onClick={this.handleFormSubmit}>
-								success
+								color="primary"
+								onClick={this.handleFormSubmit}
+								style={{ borderRadius: "0" }}>
+								Submit
 							</Button>
 						</form>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		);
 	}

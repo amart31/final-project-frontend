@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SubHead = props => {
 	return (
-		<div className="subhead-container mb-3">
+		<div className="subhead-container mb-3 mt-3">
 			<Link to="/contact">
 				<div className="d-inline-block m-3">
 					<SubHeadCard

@@ -4,6 +4,10 @@
   color: #d9d9d9;
   height: 300px;
   width: 350px;
+ background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
   
 }
 .centered-text {

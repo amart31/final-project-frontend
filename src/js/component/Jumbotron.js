@@ -20,13 +20,13 @@ const Jumbotron = () => {
 	return (
 		<div className="jumbotron jumbotron-fluid" style={jumbostyle}>
 			<div className="container">
-				<h2 className="text-uppercase align-middle" style={h2Style}>
-					Shop latest drop
-					{"  "}
-					<Link to="/rent">
+				<Link to="/rent">
+					<h2 className="text-uppercase align-middle" style={h2Style}>
+						Shop latest drop
+						{"  "}
 						<i className="fas fa-arrow-right" />
-					</Link>
-				</h2>
+					</h2>
+				</Link>
 			</div>
 		</div>
 	);

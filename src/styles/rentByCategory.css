@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-.jumbotron {
-margin-left: 175px;
-background-size: cover;
-height: 400px;}
-
 body {
     font-family: 'Montserrat', sans-serif;
 
@@ -28,7 +23,7 @@ body {
         left: -10px;
         top: -20px;
          margin-top: 10px;
-        background: #f2d900;
+        background: #4a82db;
         border-radius: 50%;
         text-align: center;
         color: #fff;      
@@ -40,7 +35,7 @@ body {
     }
   .productCard  .card-notify-wishList:hover{
     box-shadow: 10px 10px 20px 0px rgba(46,61,73,0.15);
-    border-radius: 10px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
@@ -49,7 +44,7 @@ body {
         right: -10px;
         top: -20px;
          margin-top: 10px;
-        background: #ff4444;
+        background: #4a82db;
         border-radius: 50%;
         text-align: center;
         color: #fff;      
@@ -60,17 +55,18 @@ body {
 }
 .productCard .card-notify-addToCart:hover{
     box-shadow: 10px 10px 20px 0px rgba(46,61,73,0.15);
-    border-radius: 10px;
+    border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 
 .productCard .card-detail-badge { 
         margin-top: 10px;
-        background: #f2d900;
+        background: #4a82db;
         text-align: center;
-        border-radius: 30px 30px 30px 30px;
-        color: #000;
+        margin-left: 5px;
+        border-radius: 0;
+        color: #fff;
         padding: 5px 10px;
         font-size: 16px;        
     }
