@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Context } from "../store/appContext.jsx";
 
-import { Row } from "reactstrap";
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
 import ProductForm from "../component/productForm.js";

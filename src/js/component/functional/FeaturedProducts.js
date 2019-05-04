@@ -10,7 +10,7 @@ const FeaturedProducts = props => {
 		<div>
 			<Link to={props.link}>
 				<div
-					className="img-card"
+					className="img-card featured-img"
 					style={{ backgroundImage: `url(${props.source})` }}
 				/>
 				<div className="centered-text">{props.title}</div>
