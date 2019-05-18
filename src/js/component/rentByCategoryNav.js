@@ -8,7 +8,7 @@ function RentByCategoryNav(props) {
 	return (
 		<React.Fragment>
 			<div className="h-50 align-self-stretch sidebar">
-				<h3 className="brand-head p-2">Rent by Category</h3>
+				<h3 className="brand-head p-2">Rent By Category</h3>
 
 				<Link to={"/categories/Tops"}>
 					<div className="text-center">Tops</div>

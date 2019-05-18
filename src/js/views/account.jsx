@@ -3,7 +3,6 @@ import { Context } from "../store/appContext.jsx";
 
 import "../../styles/account.css";
 import UserJumbo from "../component/userJumbo.js";
-import SavedItemCard from "../component/wishListItemCard.jsx";
 import AccountTabs from "../component/accountTabs.js";
 
 export class Account extends React.Component {

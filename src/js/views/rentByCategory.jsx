@@ -7,21 +7,19 @@ import PropTypes from "prop-types";
 
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
-import "../../styles/rentByCategory.css";
+import "../../styles/rent.css";
 
 export class RentByCategory extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 	render() {
 		return (
-			<div className="container-fluid">
-				<div className="jumbotron jumbotron-fluid text-primary">
-					<div className="container-full-bg">
-						<h1 className="display-4">Products by Category</h1>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col align-self-start">
-						<RentByCategoryNav />
-					</div>
+			<React.Fragment>
+				<RentByCategoryNav />
+				<div
+					className="row"
+					style={{ marginLeft: "200px", marginRight: "0" }}>
 					<Context.Consumer>
 						{({ store, actions }) => {
 							let product = store.products.filter(
@@ -92,7 +90,7 @@ export class RentByCategory extends React.Component {
 				</div>
 
 				<Footer />
-			</div>
+			</React.Fragment>
 		);
 	}
 }
