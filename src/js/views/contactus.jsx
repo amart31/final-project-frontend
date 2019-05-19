@@ -3,8 +3,6 @@ import { Button } from "reactstrap";
 import ContactUsTop from "../component/functional/ContactUsTop";
 import { Footer } from "../component/footer.jsx";
 
-import "../../styles/contact.css";
-
 export class Contact extends React.Component {
 	constructor(props) {
 		super(props);

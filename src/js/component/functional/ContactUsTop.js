@@ -5,7 +5,7 @@ const ContactUsTop = () => {
 	return (
 		<div className="mt-5 pt-5 ml-5">
 			<h2>Contact Info</h2>
-			<p style={{ color: "#4a82db" }}>
+			<p>
 				IF YOU HAVE ANY QUESTIONS FEEL FREE TO SEND US AN EMAIL BELOW.
 			</p>
 			<p>

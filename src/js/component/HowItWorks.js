@@ -13,9 +13,6 @@ import {
 	ModalFooter
 } from "reactstrap";
 import classnames from "classnames";
-//Styles import
-import "../../styles/howitworks.css";
-
 import { Link } from "react-router-dom";
 
 let style = {

@@ -7,9 +7,6 @@ import HowItWorks from "../component/HowItWorks";
 //footer import
 import { Footer } from "../component/footer.jsx";
 
-// style sheet
-import "../../styles/home.css";
-
 export class Home extends React.Component {
 	render() {
 		return (

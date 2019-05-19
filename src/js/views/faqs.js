@@ -1,8 +1,5 @@
 import React from "react";
 
-//import styles sheet
-import "../../styles/faqs.css";
-
 const FAQs = () => {
 	return (
 		<div className="mt-5 pt-2">

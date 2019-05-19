@@ -1,8 +1,6 @@
 import React from "react";
 import { Jumbotron, Row, Col } from "reactstrap";
 
-import "../../styles/home.css";
-
 const imgUrl =
 	"https://cdn.pixabay.com/photo/2015/11/07/11/46/fashion-1031469_960_720.jpg";
 const style = {

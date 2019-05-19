@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../styles/subhead.css";
 import PropTypes from "prop-types";
 
 class SubHeadCard extends React.Component {

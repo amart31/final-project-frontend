@@ -1,0 +1,27 @@
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+
+//How it works nav tab edit*
+
+.nav-tabs .nav-link.active, 
+.nav-tabs .nav-item.show .nav-link{
+    border: none;
+}
+
+.nav {
+    
+    display: -webkit-box;
+}
