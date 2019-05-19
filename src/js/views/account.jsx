@@ -1,7 +1,6 @@
 import React from "react";
 import { Context } from "../store/appContext.jsx";
 
-import "../../styles/account.css";
 import UserJumbo from "../component/userJumbo.js";
 import AccountTabs from "../component/accountTabs.js";
 

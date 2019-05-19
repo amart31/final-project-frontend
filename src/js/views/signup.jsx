@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/loginsignup.css";
+
 import ShortSignupForm from "../component/shortSignUp.jsx";
 
 export class Signup extends React.Component {
