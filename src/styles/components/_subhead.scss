@@ -1,7 +1,13 @@
 .subheadbutton {
-  width: 150px;
-  height: 65px;
+  width: 15rem;
+  height: 6.5rem;
   position: relative;
+  border: 1px solid $color-primary;
+  color: $color-primary;
+  text-decoration: none;
+  &:hover{
+    box-shadow: 5px 10px 10px $color-primary;
+  }
 }
 .subhead-text {
   position: absolute;
