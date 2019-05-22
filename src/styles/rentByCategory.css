@@ -9,79 +9,79 @@ body {
 /* Category Ads */
 .productCard
  {
-    height: 350px;
-    width: 275px;
+    height: 35rem;
+    width: 27.5rem;
    
 }
 .productCard .card-img-top {
-    height: 180px;
+    height: 1.8rem;
     width: 100%;
     object-fit: cover;
 }
 .productCard .card-notify-wishList {
         position: absolute;
-        left: -10px;
-        top: -20px;
-         margin-top: 10px;
+        left: -1rem;
+        top: -2rem;
+         margin-top: 1rem;
         background: #4a82db;
         border-radius: 50%;
         text-align: center;
         color: #fff;      
-        font-size: 14px;      
-        width: 50px;
-        height: 50px;    
-        padding: 15px 0 0 0;
+        font-size: 1.4rem;      
+        width: 5rem;
+        height: 5rem;    
+        padding: 1.5rem 0 0 0;
 
     }
   .productCard  .card-notify-wishList:hover{
-    box-shadow: 10px 10px 20px 0px rgba(46,61,73,0.15);
+    box-shadow: 1rem 1rem 1rem 0px rgba(46,61,73,0.15);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
  .productCard .card-notify-addToCart {
         position: absolute;
-        right: -10px;
-        top: -20px;
-         margin-top: 10px;
+        right: -1rem;
+        top: -2rem;
+         margin-top: 1rem;
         background: #4a82db;
         border-radius: 50%;
         text-align: center;
         color: #fff;      
-        font-size: 14px;      
-        width: 50px;
-        height: 50px;    
-        padding: 15px 0 0 0;
+        font-size: 1.4rem;      
+        width: 5rem;
+        height: 5rem;    
+        padding: 1.5rem 0 0 0;
 }
 .productCard .card-notify-addToCart:hover{
-    box-shadow: 10px 10px 20px 0px rgba(46,61,73,0.15);
+    box-shadow: 1rem 1rem 2rem 0px rgba(46,61,73,0.15);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 
 .productCard .card-detail-badge { 
-        margin-top: 10px;
+        margin-top: 1rem;
         background: #4a82db;
         text-align: center;
         margin-left: 5px;
         border-radius: 0;
         color: #fff;
-        padding: 5px 10px;
-        font-size: 16px;        
+        padding: 5px 1rem;
+        font-size: 1.6rem;        
     }
 
    
 
 .productCard .card:hover {
             background: #fff;
-            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            box-shadow: 1.2rem 1.5rem 2rem 0px rgba(46,61,73,0.15);
             border-radius: 4px;
             transition: all 0.3s ease;
         }
 
  .productCard .card-image-overlay {
-        font-size: 20px;
+        font-size: 2rem;
         
     }
 
@@ -93,16 +93,16 @@ body {
 
  .productCard .ad-btn {
         text-transform: uppercase;
-        width: 150px;
-        height: 40px;
-        border-radius: 80px;
-        font-size: 16px;
-        line-height: 35px;
+        width: 15rem;
+        height: 4rem;
+        border-radius: 8rem;
+        font-size: 1.6rem;
+        line-height: 3.5rem;
         text-align: center;
         border: 3px solid #e6de08;
         display: block;
         text-decoration: none;
-        margin: 20px auto 1px auto;
+        margin: 2rem auto 1px auto;
         color: #000;
         overflow: hidden;        
         position: relative;
@@ -115,12 +115,12 @@ body {
             color: #1e1717;
             border: 2px solid #d9d9d9;
             transition: all 0.3s ease;
-            box-shadow: 12px 15px 20px 0px rgba(46,61,73,0.15);
+            box-shadow: 1.2rem 1.5rem 2rem 0px rgba(46,61,73,0.15);
         }
 
  .productCard .ad-title h5 {
         text-transform: uppercase;
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
 /*@media only screen and (max-width:990px){.product-card{margin-bottom:30px}*/

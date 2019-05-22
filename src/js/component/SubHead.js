@@ -25,7 +25,7 @@ const SubHead = props => {
 				</div>
 			</Link>
 			<Link to="/aboutus">
-				<div className="d-inline-block m-3">
+				<div className="d-inline-block subheadbutton">
 					<div className="subhead-text">About Us</div>
 				</div>
 			</Link>

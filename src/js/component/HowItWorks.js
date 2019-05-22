@@ -164,6 +164,7 @@ export default class HowItWorks extends React.Component {
 												List your clothes
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://images.pexels.com/photos/1266007/pexels-photo-1266007.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -219,6 +220,7 @@ export default class HowItWorks extends React.Component {
 												Rent your clothes
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://as2.ftcdn.net/jpg/00/49/66/17/500_F_49661779_t6gq80LMzcxzH0KLcQF6LnnbG6uSnShW.jpg"
@@ -288,6 +290,7 @@ export default class HowItWorks extends React.Component {
 												Receive, Rock, rerent
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://t3.ftcdn.net/jpg/01/26/87/04/240_F_126870421_jHjuJfsLESyPobRNg6zhlSNHD4j7xp6W.jpg"
@@ -366,6 +369,7 @@ export default class HowItWorks extends React.Component {
 												register and order
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://as1.ftcdn.net/jpg/01/03/25/24/500_F_103252493_JUc5rXG6ThFWFZhQE4NwQPrCTkmFa0Fk.jpg"
@@ -417,6 +421,7 @@ export default class HowItWorks extends React.Component {
 												Recieve and rock
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://images.pexels.com/photos/1822845/pexels-photo-1822845.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
@@ -469,6 +474,7 @@ export default class HowItWorks extends React.Component {
 												Return and repeat
 											</h5>
 											<img
+												className="stepcard-img"
 												width="300"
 												height="218"
 												src="https://as1.ftcdn.net/jpg/02/10/12/92/500_F_210129241_fc3EDLMgqyVqgeZicp0k9VQ7EarQb6X6.jpg"

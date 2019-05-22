@@ -2,10 +2,10 @@
 .sidebar {
   margin: 0;
   padding: 0;
-  width: 200px;
+  width: 20rem;
   background-color: #f8f9fa;
   position: absolute;
-  top: 55px;
+  top: 5.5rem;
   bottom: 0;
 }
 
@@ -13,7 +13,7 @@
 .sidebar a {
   display: block;
   color: black;
-  padding: 16px;
+  padding: 1.6rem;
   text-decoration: none;
 }
 
@@ -34,7 +34,7 @@
 @media screen and (max-width: 700px) {
   .sidebar {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
     height: auto;
     position: relative;
   }
