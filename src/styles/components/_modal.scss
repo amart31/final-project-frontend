@@ -1,0 +1,43 @@
+.modal{
+    &-wrapper{
+        background: $color-white;
+        border: 1px solid #d0cccc;
+        box-shadow: 0 .5rem .8rem 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+        margin: 100px auto 0;
+        transition: all .8s;
+        width: 60%;
+    }
+
+    &-header {
+        background: $color-dark-grey;
+        height: 4rem;
+        line-height: 4rem;
+        padding: .5rem 2rem;
+        text-align: right;
+
+        & h5{
+            color: $color-white;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    
+    &-body {
+        padding: 1rem 1.5rem;
+        text-align: center;
+    }
+    
+    &-footer {
+        background: $color-dark-grey;
+        height: 3.5rem;
+        padding: 1.5rem;
+    }
+}
+.back-drop {
+    background-color: rgba(48, 49, 48, 0.42);
+    height: 100%;
+    position: fixed;
+    transition: all 1.3s;
+    width: 100%;
+}
