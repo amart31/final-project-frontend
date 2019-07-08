@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* Category Ads */
+.productCard{
+    height: 35rem;
+    width: 27.5rem;
+   
+
+    & .card-img-top {
+        height: 1.8rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    & .card-notify-wishList {
+        position: absolute;
+        left: -1rem;
+        top: -2rem;
+        margin-top: 1rem;
+        background: $color-primary;
+        border-radius: 50%;
+        text-align: center;
+        color: $color-white;      
+        font-size: 1.4rem;      
+        width: 5rem;
+        height: 5rem;    
+        padding: 1.5rem 0 0 0;
+    }
+
+    & .card-notify-wishList:hover{
+        box-shadow: 1rem 1rem 1rem 0px rgba(46,61,73,0.15);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    & .card-notify-addToCart {
+        position: absolute;
+        right: -1rem;
+        top: -2rem;
+        margin-top: 1rem;
+        background: $color-primary;
+        border-radius: 50%;
+        text-align: center;
+        color: $color-white;      
+        font-size: 1.4rem;      
+        width: 5rem;
+        height: 5rem;    
+        padding: 1.5rem 0 0 0;
+    }
+
+    & .card-notify-addToCart:hover{
+        box-shadow: 1rem 1rem 2rem 0px rgba(46,61,73,0.15);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    & .card-detail-badge { 
+        margin-top: 1rem;
+        background: $color-primary;
+        text-align: center;
+        margin-left: 5px;
+        border-radius: 0;
+        color: $color-white;
+        padding: 5px 1rem;
+        font-size: 1.6rem;   
+    }     
+
+    & .card:hover {
+        background: $color-white;
+        box-shadow: 1.2rem 1.5rem 2rem 0px rgba(46,61,73,0.15);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    & .card-image-overlay {
+        font-size: 2rem;
+            
+    }
+
+
+    & .card-image-overlay span {
+        display: inline-block;              
+    }
+
+
+    & .ad-btn {
+        text-transform: uppercase;
+        width: 15rem;
+        height: 4rem;
+        border-radius: 8rem;
+        font-size: 1.6rem;
+        line-height: 3.5rem;
+        text-align: center;
+        border: 3px solid $color-primary;
+        display: block;
+        text-decoration: none;
+        margin: 2rem auto 1px auto;
+        color: #000;
+        overflow: hidden;        
+        position: relative;
+        background-color: $color-primary;
+    }
+
+    & .ad-btn:hover {
+        text-decoration: none;
+        background-color: #d9d9d9;
+        color: #1e1717;
+        border: 2px solid #d9d9d9;
+        transition: all 0.3s ease;
+        box-shadow: 1.2rem 1.5rem 2rem 0px rgba(46,61,73,0.15);
+    }
+
+    & .ad-title h5 {
+        text-transform: uppercase;
+        font-size: 1.8rem;
+    }
+}

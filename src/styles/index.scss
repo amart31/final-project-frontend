@@ -3,9 +3,11 @@
 @import "base/base";
 @import "base/typography";
 
+@import "components/buttons";
 @import "components/howitworks";
-@import "components/subhead";
 @import "components/modal";
+@import "components/subhead";
 
 @import "pages/contactus";
 @import "pages/home";
+@import "pages/products";
