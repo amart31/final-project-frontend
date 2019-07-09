@@ -6,7 +6,6 @@ import { Context } from "../store/appContext.jsx";
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
 import ProductForm from "../component/productForm.js";
-import "../../styles/rent.css";
 
 export class Rent extends React.Component {
 	render() {

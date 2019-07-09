@@ -1,0 +1,21 @@
+.footer{
+    background: #f8f9fa;
+    height: 80px;
+    position: relative;
+
+    &__side{
+        position: absolute; 
+        top: 25%; 
+        left: 4%;
+    }
+
+    &__btn{
+        border-radius: 0; 
+    }
+
+    &__logo{
+        position: absolute; 
+        top: 10%; 
+        left: 85%;
+    }
+}

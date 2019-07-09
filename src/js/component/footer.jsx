@@ -1,31 +1,17 @@
 import React from "react";
-import { NavItem, Nav, Button, NavLink } from "reactstrap";
-import Logo from "../../img/logo1.jpg";
+import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-
-const boxStyle = {
-	border: "1px solid #4a82db"
-};
 
 export class Footer extends React.Component {
 	render() {
 		return (
-			<footer
-				className="footer mt-auto py-2"
-				style={{
-					background: "#f8f9fa",
-					height: "80px",
-					position: "relative"
-				}}>
-				<div
-					className="d-inline-block"
-					style={{ position: "absolute", top: "25%", left: "4%" }}>
+			<footer className="footer mt-auto py-2">
+				<div className="d-inline-block footer__side">
 					<Link to="/">
 						<Button
 							outline
 							color="primary"
-							className="mr-3"
-							style={{ borderRadius: "0" }}>
+							className="mr-3 footer__btn">
 							Home
 						</Button>
 					</Link>
@@ -33,8 +19,7 @@ export class Footer extends React.Component {
 						<Button
 							outline
 							color="primary"
-							className="mr-3"
-							style={{ borderRadius: "0" }}>
+							className="mr-3 footer__btn">
 							Rent
 						</Button>
 					</Link>
@@ -42,8 +27,7 @@ export class Footer extends React.Component {
 						<Button
 							outline
 							color="primary"
-							className="mr-3"
-							style={{ borderRadius: "0" }}>
+							className="mr-3 footer__btn">
 							Account
 						</Button>
 					</Link>
@@ -51,15 +35,12 @@ export class Footer extends React.Component {
 						<Button
 							outline
 							color="primary"
-							className="mr-4"
-							style={{ borderRadius: "0" }}>
+							className="mr-4 footer__btn">
 							Contact
 						</Button>
 					</Link>
 				</div>
-				<div
-					className="d-inline-block"
-					style={{ position: "absolute", top: "10%", left: "85%" }}>
+				<div className="d-inline-block footer__logo">
 					<a href="facebook.com">
 						<i className="fab fa-facebook-square fa-3x mr-2" />
 					</a>

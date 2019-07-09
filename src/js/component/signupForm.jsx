@@ -6,10 +6,8 @@ import {
 	Label,
 	Input,
 	Button,
-	Collapse,
 	Row
 } from "reactstrap";
-import { Context } from "../store/appContext.jsx";
 
 export default class SignupForm extends React.Component {
 	constructor(props) {
@@ -35,12 +33,7 @@ export default class SignupForm extends React.Component {
 	}
 	render() {
 		return (
-			<div
-				style={{
-					background: "#a9b6cc",
-					color: "#4a82db",
-					height: "-webkit-fill-available"
-				}}>
+			<div className="signup-form">
 				<div className="container">
 					<Form>
 						<Row form>

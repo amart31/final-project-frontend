@@ -1,0 +1,15 @@
+.login{
+    width: 40rem;
+    color: $color-primary;
+    background: $color-white;
+
+    &__parent{
+        background: $color-light-blueish;
+        height: -webkit-fill-available;
+        padding: 9rem;
+    }
+    &__input{
+        width: 30rem;
+        margin: 0 auto;
+    }
+}

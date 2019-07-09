@@ -8,7 +8,7 @@
     color: $color-primary;
     font-weight: 400;
     font-size: 2.4rem;
-    line-height: rem;
+    line-height: 1;
     border-radius: 50%;
     
     &:hover{
@@ -28,4 +28,13 @@
     margin-right: auto;
     width: 35rem;
     
+}
+
+.nav-tabs{
+    border-bottom: 3px solid $color-primary;
+    margin-bottom: 2.5rem;
+}
+
+.modal-dialog{
+    color: $color-primary;
 }

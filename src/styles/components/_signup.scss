@@ -1,0 +1,21 @@
+.signup {
+    background: $color-light-blueish;
+    height: -webkit-fill-available;
+    padding: 9rem;
+
+    &__container{
+        width: 40rem;
+        color: $color-primary;
+        background: $color-white;
+    }
+
+    &__input{
+        width: 30rem;
+        margin: 0 auto;
+    }
+    &-form{
+        background: $color-light-blueish;
+        color: $color-primary;
+        height: -webkit-fill-available;
+    }  
+}

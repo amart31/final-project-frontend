@@ -42,25 +42,14 @@ export default class ShortSignupForm extends React.Component {
 	}
 	render() {
 		return (
-			<div
-				style={{
-					background: "#a9b6cc",
-					height: "-webkit-fill-available",
-					padding: "90px"
-				}}>
+			<div className="signup">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						if (store.session.isLoggedIn === true) {
 							return alert("Welcome " + store.session.user);
 						} else {
 							return (
-								<div
-									className="container text-center border"
-									style={{
-										width: "400px",
-										color: "#4a82db",
-										background: "white"
-									}}>
+								<div className="container text-center border signup__container">
 									<h2 className="mt-4 pt-3">Sign Up</h2>
 									<Form>
 										<FormGroup>
@@ -68,10 +57,7 @@ export default class ShortSignupForm extends React.Component {
 												Username:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="signup__input"
 												type="text"
 												name="user"
 												id="user"
@@ -90,10 +76,7 @@ export default class ShortSignupForm extends React.Component {
 												Email:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="signup__input"
 												type="email"
 												name="email"
 												id="email"
@@ -112,10 +95,7 @@ export default class ShortSignupForm extends React.Component {
 												Password:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="signup__input"
 												type="password"
 												name="pass"
 												id="pass"
@@ -135,10 +115,7 @@ export default class ShortSignupForm extends React.Component {
 												Confirm Password:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="signup__input"
 												type="password"
 												name="confirmPass"
 												id="confirmPass"

@@ -15,11 +15,6 @@ import {
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 
-let style = {
-	borderBottom: "3px solid #4a82db",
-	marginBottom: "25px"
-};
-
 export default class HowItWorks extends React.Component {
 	constructor(props) {
 		super(props);
@@ -83,7 +78,7 @@ export default class HowItWorks extends React.Component {
 		return (
 			<div>
 				<div className="switcher">
-					<Nav tabs style={style}>
+					<Nav tabs>
 						<NavItem>
 							<NavLink
 								className={classnames({
@@ -121,8 +116,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalLease1}
-											toggle={this.toggleModalLease1}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalLease1}>
 											<ModalHeader
 												toggle={this.toggleModalLease1}>
 												Open an account
@@ -181,8 +175,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalLease2}
-											toggle={this.toggleModalLease2}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalLease2}>
 											<ModalHeader
 												toggle={this.toggleModalLease2}>
 												So you opened the account?
@@ -237,8 +230,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalLease3}
-											toggle={this.toggleModalLease3}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalLease3}>
 											<ModalHeader
 												toggle={this.toggleModalLease3}>
 												Get your items back
@@ -313,8 +305,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalRent1}
-											toggle={this.toggleModalRent1}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalRent1}>
 											<ModalHeader
 												toggle={this.toggleModalRent1}>
 												Register and Order
@@ -386,8 +377,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalRent2}
-											toggle={this.toggleModalRent2}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalRent2}>
 											<ModalHeader
 												toggle={this.toggleModalRent2}>
 												Receive and Rock
@@ -438,8 +428,7 @@ export default class HowItWorks extends React.Component {
 										</button>
 										<Modal
 											isOpen={this.state.modalRent3}
-											toggle={this.toggleModalRent3}
-											style={{ color: "#4a82db" }}>
+											toggle={this.toggleModalRent3}>
 											<ModalHeader
 												toggle={this.toggleModalRent3}>
 												Receive and Rock

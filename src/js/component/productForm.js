@@ -40,12 +40,7 @@ export default class ProductForm extends React.Component {
 					outline
 					color="primary"
 					onClick={this.toggle}
-					style={{
-						marginBottom: "1rem",
-						borderRadius: "0",
-						marginLeft: "50%",
-						marginTop: "20px"
-					}}>
+					className="product__btn">
 					Add Item
 				</Button>
 				<Collapse isOpen={this.state.collapse}>
@@ -182,7 +177,7 @@ export default class ProductForm extends React.Component {
 										<Button
 											outline
 											color="primary"
-											style={{ borderRadius: "0" }}
+											className="product__btn1"
 											onClick={() => {
 												actions.createProduct(
 													this.state.title,

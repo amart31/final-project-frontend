@@ -1,0 +1,13 @@
+.home__jumbo{
+    background-image: url("https://images.pexels.com/photos/1345082/pexels-photo-1345082.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	background-size: cover;
+	color: $color-primary;
+	height: 50rem;
+    position: relative;
+    
+    &-head{
+        position: absolute;
+        bottom: 1.5rem;
+        left: 5rem;
+    }
+}

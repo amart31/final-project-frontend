@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Context } from "../store/appContext.jsx";
 import PropTypes from "prop-types";
 
 const UserJumbo = props => {
@@ -10,9 +9,8 @@ const UserJumbo = props => {
 				<div className="d-flex justify-content-center">
 					<img
 						src="https://picsum.photos/150/150/?random"
-						className="mr-3"
+						className="mr-3 user-img"
 						alt="..."
-						style={{ borderRadius: "50%" }}
 					/>
 				</div>
 				<div className="d-flex justify-content-center">

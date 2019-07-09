@@ -7,7 +7,6 @@ import PropTypes from "prop-types";
 
 import RentByCategoryNav from "../component/rentByCategoryNav.js";
 import { Footer } from "../component/footer.jsx";
-import "../../styles/rent.css";
 
 export class RentByCategory extends React.Component {
 	constructor(props) {

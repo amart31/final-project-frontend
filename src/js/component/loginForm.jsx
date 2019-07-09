@@ -22,12 +22,7 @@ export default class LoginForm extends React.Component {
 
 	render() {
 		return (
-			<div
-				style={{
-					background: "#a9b6cc",
-					height: "-webkit-fill-available",
-					padding: "90px"
-				}}>
+			<div className="login__parent">
 				<Context.Consumer>
 					{({ store, actions }) => {
 						if (store.session.isLoggedIn === true) {
@@ -36,13 +31,7 @@ export default class LoginForm extends React.Component {
 							);
 						} else {
 							return (
-								<div
-									className="container text-center border"
-									style={{
-										width: "400px",
-										color: "#4a82db",
-										background: "white"
-									}}>
+								<div className="container text-center border login">
 									<h2 className="mt-4 pt-3">Log In</h2>
 									<Form onSubmit={actions.handleFormSubmit}>
 										<FormGroup>
@@ -50,10 +39,7 @@ export default class LoginForm extends React.Component {
 												Username:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="login__input"
 												type="text"
 												name="username"
 												ref={this.user}
@@ -71,10 +57,7 @@ export default class LoginForm extends React.Component {
 												Password:
 											</Label>
 											<Input
-												style={{
-													width: "300px",
-													margin: "0 auto"
-												}}
+												className="login__input"
 												type="password"
 												name="userPass"
 												ref={this.pass}
